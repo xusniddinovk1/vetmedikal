@@ -32,7 +32,7 @@
                     <a href="{% url 'products' %}" class="nav-link active">Mahsulotlar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'manufacturing' %}" class="nav-link">Ishlab chiqarish</a>
+                    <a href="{% url 'manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
                 </li>
                 <li class="nav-item">
                     <a href="{% url 'partners' %}" class="nav-link">Hamkorlar</a>
@@ -89,8 +89,8 @@
 <section class="production-lines">
     <div class="container">
         <div class="section-header">
-            <h2>Mahsulotlar — avval bizning fermamizda sinovdan o‘tadi</h2>
-            <p>Har xil mahsulot turlari uchun maxsus jihozlangan liniyalar</p>
+            <h2>Mahsulotlar - avval bizning fermamizda sinovdan o‘tadi</h2>
+            <p>Har bir premiks va vaksina — o‘z fermamizdagi yuqori natijalar bilan tasdiqlangan.</p>
         </div>
         <div class="lines-grid">
             {% for line in lines %}

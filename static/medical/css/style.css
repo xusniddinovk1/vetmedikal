@@ -96,7 +96,7 @@ body {
     padding: 0;
     position: relative;
     background:
-      url("/static/images/fon/main_img_2.jpg") center/cover no-repeat;
+      url("/static/images/fon/main_img.jpeg") center/cover no-repeat;
     color: white;
     overflow: hidden;
     margin-top: 70px;
