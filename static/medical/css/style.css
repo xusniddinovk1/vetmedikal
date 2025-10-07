@@ -766,6 +766,62 @@ body {
 }
 
 /* Product Detail Page Enhanced Styles */
+.product-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Asosiy katta rasm */
+.main-image {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* maksimal kenglik */
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Badge (masalan “Yangi”, “Chegirma” va h.k.) */
+.product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: crimson;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+/* Kichik tumnlar (thumbnail) */
+.thumbnail-images {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail-images img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.thumbnail-images img.active,
+.thumbnail-images img:hover {
+  border: 2px solid #007bff;
+  transform: scale(1.05);
+}
 .product-detail {
     padding: 100px 0;
     background: linear-gradient(135deg, #f8fffe 0%, #f0fdf4 100%);
@@ -821,7 +877,51 @@ body {
     color: #064add;
     font-size: 1.2rem;
 }
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
 
+/* Har bir spec uchun kartochka */
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6f9fc;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+/* Hover effekti */
+.spec-item:hover {
+  background: #eef4ff;
+  border-color: #cddfff;
+}
+
+/* Belgining o‘zi */
+.spec-item i {
+  color: #007bff; /* Ko‘k ptichka */
+  font-size: 14px;
+}
+
+/* Sarlavha (chap qismi) */
+.spec-label {
+  font-weight: 600;
+}
+
+/* Qiymat (o‘ng qismi) */
+.spec-value {
+  margin-left: 4px;
+  color: #555;
+}
 .product-pricing {
     background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
     padding: 2rem;
