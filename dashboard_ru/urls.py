@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth.views import PasswordChangeDoneView
 
-app_name = 'dashboard'
+app_name = 'dashboard_ru'
 
 urlpatterns = [
     path('', views.home_page, name='home_page'),
