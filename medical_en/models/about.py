@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Service(models.Model):
+class Service1(models.Model):
     title = models.CharField(max_length=255)
     icon = models.CharField(max_length=50)
     description = models.TextField()
@@ -10,7 +10,7 @@ class Service(models.Model):
         return self.title
 
 
-class Feature(models.Model):
+class Feature1(models.Model):
     title = models.CharField(max_length=255)
     context = models.TextField()
     icon = models.CharField(max_length=50)
@@ -19,7 +19,7 @@ class Feature(models.Model):
         return self.sarlavha
 
 
-class Contact(models.Model):
+class Contact1(models.Model):
     address = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
@@ -28,7 +28,7 @@ class Contact(models.Model):
         return self.address
 
 
-class Internet(models.Model):
+class Internet1(models.Model):
     nomi = models.CharField(max_length=50)
     icon = models.CharField(max_length=50)
     link = models.URLField()
@@ -38,7 +38,7 @@ class Internet(models.Model):
 
 
 # Missiya (biz haqimizda)
-class Mission(models.Model):
+class Mission1(models.Model):
     title = models.CharField(max_length=255)
     context = models.TextField()
     image = models.ImageField(upload_to="missions/", blank=True, null=True)
@@ -49,7 +49,7 @@ class Mission(models.Model):
 
 
 # Missiya punktlari (ikonka bilan)
-class MissionPoint(models.Model):
+class MissionPoint1(models.Model):
     icon = models.CharField(max_length=50, default="fas fa-check-circle")
     title = models.CharField(max_length=255)
     context = models.TextField()
@@ -59,7 +59,7 @@ class MissionPoint(models.Model):
 
 
 # Statistikalar
-class Statistic(models.Model):
+class Statistic1(models.Model):
     number = models.CharField(max_length=20)
     name = models.CharField(max_length=100)
 
@@ -68,7 +68,7 @@ class Statistic(models.Model):
 
 
 # Qadriyatlar
-class Value(models.Model):
+class Value1(models.Model):
     icon = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
     context = models.TextField()
@@ -78,7 +78,7 @@ class Value(models.Model):
 
 
 # Yutuqlar
-class Achievement(models.Model):
+class Achievement1(models.Model):
     icon = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
     context = models.TextField()
@@ -89,7 +89,7 @@ class Achievement(models.Model):
 
 
 # Jamoa
-class Member(models.Model):
+class Member1(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
     bio = models.TextField()
@@ -100,7 +100,7 @@ class Member(models.Model):
 
 
 # Tarix (timeline)
-class History(models.Model):
+class History1(models.Model):
     year = models.CharField(max_length=10)
     title = models.CharField(max_length=255)
     context = models.TextField()

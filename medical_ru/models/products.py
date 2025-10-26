@@ -1,15 +1,15 @@
 from django.db import models
 
 
-class ProductCategory(models.Model):
+class ProductCategory2(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
 
 
-class Product(models.Model):
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name="products")
+class Product2(models.Model):
+    category = models.ForeignKey(ProductCategory2, on_delete=models.CASCADE, related_name="products")
     title = models.CharField(max_length=200)
     subtitle = models.TextField()
     description = models.TextField()
@@ -26,7 +26,7 @@ class Product(models.Model):
         return self.title
 
 
-class ProductFeature(models.Model):
+class ProductFeature2(models.Model):
     icon = models.CharField(max_length=50, default="fas fa-check-circle")
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -39,8 +39,8 @@ class ProductFeature(models.Model):
         return self.title
 
 
-class ProductImage(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
+class ProductImage2(models.Model):
+    product = models.ForeignKey(Product2, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(upload_to="products/gallery/")
 
     def __str__(self):

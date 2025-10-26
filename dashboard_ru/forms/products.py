@@ -1,21 +1,16 @@
 from django import forms
-from medical.models import (
-    ProductCategory,
-    Product,
-    ProductFeature,
-    ProductImage,
-)
+from medical_ru.models import *
 
 
 class ProductCategoryForm(forms.ModelForm):
     class Meta:
-        model = ProductCategory
+        model = ProductCategory2
         fields = ["name"]
 
 
 class ProductForm(forms.ModelForm):
     class Meta:
-        model = Product
+        model = Product2
         fields = [
             "category",
             "title",
@@ -34,11 +29,11 @@ class ProductForm(forms.ModelForm):
 
 class ProductFeatureForm(forms.ModelForm):
     class Meta:
-        model = ProductFeature
+        model = ProductFeature2
         fields = ["icon", "title", "description"]
 
 
 class ProductImageForm(forms.ModelForm):
     class Meta:
-        model = ProductImage
+        model = ProductImage2
         fields = ["product", "image"]
