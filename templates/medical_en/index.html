@@ -18,29 +18,30 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span>Vetmedikal</span>
+                <span style="font-size: 1.9rem;">🐔</span>
+                <span style="font-size: 28px; font-weight: 700; color: #064add;">Vetmedikal</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'en:home' %}" class="nav-link">Bosh sahifa</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'en:about' %}" class="nav-link">Biz haqimizda</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'en:products' %}" class="nav-link active">Mahsulotlar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'en:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'en:partners' %}" class="nav-link">Hamkorlar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'en:news' %}" class="nav-link">Yangiliklar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'en:gallery' %}" class="nav-link">Galereya</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -59,8 +60,8 @@
         <h1 class="hero-title">Parrandalar uchun sifatli premixlar va vaksinalar</h1>
         <p class="hero-description">Vetmedikal - parrandachilik uchun eng sifatli va ishonchli chet el mahsulotlarini taklif etuvchi kompaniya. Bizning premiks va vaksinalar xalqaro standartlarga javob beradi, samaradorligi esa amaliyotda isbotlangan.</p>
         <div class="hero-buttons">
-            <a href="{% url 'products'%}" class="btn btn-primary">Mahsulotlarimiz</a>
-            <a href="{% url 'about' %}" class="btn btn-secondary">Biz haqimizda</a>
+            <a href="{% url 'en:products'%}" class="btn btn-primary">Mahsulotlarimiz</a>
+            <a href="{% url 'en:about' %}" class="btn btn-secondary">Biz haqimizda</a>
         </div>
     </div>
 </section>
@@ -121,11 +122,11 @@
             <h2> Parrandalar salomatligi va rivojlanishi uchun ishonchli yechim bizda</h2>
             <p>Sifatli premix va vaksinalar uchun bizga murojaat qiling</p>
             <div class="cta-buttons">
-                <a href="tel:+998901234567" class="btn btn-primary">
+                <a href="tel:+9989880801100" class="btn btn-primary">
                     <i class="fas fa-phone"></i>
                     Qo'ng'iroq qilish
                 </a>
-                <a href="{% url 'products'%}" class="btn btn-outline">Mahsulotlar</a>
+                <a href="{% url 'en:products'%}" class="btn btn-outline">Mahsulotlar</a>
             </div>
         </div>
     </div>
@@ -137,7 +138,6 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <i class="fas fa-paw"></i>
                     <span>Vedmedikal</span>
                 </div>
                 <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi.</p>
@@ -152,19 +152,19 @@
             <div class="footer-section">
                 <h3>Tezkor havolalar</h3>
                 <ul>
-                    <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'en:about' %}">Biz haqimizda</a></li>
+                    <li><a href="{% url 'en:products' %}">Mahsulotlar</a></li>
+                    <li><a href="{% url 'en:news' %}">Yangiliklar</a></li>
+                    <li><a href="{% url 'en:gallery' %}">Galereya</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Mahsulotlar</h3>
                 <ul>
-                    <li><a href="{% url 'products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'en:products' %}">Tovuq vaksinasi</a></li>
+                    <li><a href="{% url 'en:products' %}">Mushuk vaksinasi</a></li>
+                    <li><a href="{% url 'en:products' %}">Antiparazitar dorilar</a></li>
+                    <li><a href="{% url 'en:products' %}">Vitaminlar</a></li>
                 </ul>
             </div>
             <div class="footer-section">
