@@ -22,25 +22,25 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'ru:home' %}" class="nav-link">Bosh sahifa</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'ru:about' %}" class="nav-link">Biz haqimizda</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'ru:products' %}" class="nav-link active">Mahsulotlar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'ru:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'ru:partners' %}" class="nav-link">Hamkorlar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'ru:news' %}" class="nav-link">Yangiliklar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'ru:gallery' %}" class="nav-link">Galereya</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -56,7 +56,7 @@
     <div class="card-container">
         {% for education in educations %}
         <div class="card">
-            <a href="{% url 'news_detail' education.id %}">
+            <a href="{% url 'ru:news_detail' education.id %}">
                 <img src="{{ education.image.url }}" alt="Camp Image"/>
             </a>
             <div class="card-content">
@@ -64,7 +64,7 @@
                 <p class="card-description">
                     {{ education.content|truncatechars:40 }}
                 </p>
-                <a href="{% url 'news_detail' education.id %}" class="btn1"
+                <a href="{% url 'ru:news_detail' education.id %}" class="btn1"
                 >Batafsil</a
                 >
             </div>
@@ -113,19 +113,19 @@
             <div class="footer-section">
                 <h3>Tezkor havolalar</h3>
                 <ul>
-                    <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'ru:about' %}">Biz haqimizda</a></li>
+                    <li><a href="{% url 'ru:products' %}">Mahsulotlar</a></li>
+                    <li><a href="{% url 'ru:news' %}">Yangiliklar</a></li>
+                    <li><a href="{% url 'ru:gallery' %}">Galereya</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Mahsulotlar</h3>
                 <ul>
-                    <li><a href="{% url 'products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'ru:products' %}">Tovuq vaksinasi</a></li>
+                    <li><a href="{% url 'ru:products' %}">Mushuk vaksinasi</a></li>
+                    <li><a href="{% url 'ru:products' %}">Antiparazitar dorilar</a></li>
+                    <li><a href="{% url 'ru:products' %}">Vitaminlar</a></li>
                 </ul>
             </div>
             <div class="footer-section">
