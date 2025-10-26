@@ -5,7 +5,7 @@ from medical_ru.models import *
 User = get_user_model()
 
 
-class ProfileForm2(forms.ModelForm):
+class ProfileForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'phone_number', 'email', 'bio', 'avatar']
@@ -18,7 +18,7 @@ class ProfileForm2(forms.ModelForm):
         }
 
 
-class ManufacturingOverviewForm2(forms.ModelForm):
+class ManufacturingOverviewForm(forms.ModelForm):
     class Meta:
         model = ManufacturingOverview2
         fields = "__all__"

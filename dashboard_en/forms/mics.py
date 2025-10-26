@@ -1,10 +1,6 @@
 from django.contrib.auth import get_user_model
 from django import forms
-from medical.models.mics import (
-    ManufacturingOverview, ManufacturingStat, ProductionLine,
-    Partner, PartnershipBenefit, GalleryCategory, Gallery,
-    Category, News
-)
+from medical_en.models import *
 
 User = get_user_model()
 
@@ -24,53 +20,53 @@ class ProfileForm(forms.ModelForm):
 
 class ManufacturingOverviewForm(forms.ModelForm):
     class Meta:
-        model = ManufacturingOverview
+        model = ManufacturingOverview1
         fields = "__all__"
 
 
 class ManufacturingStatForm(forms.ModelForm):
     class Meta:
-        model = ManufacturingStat
+        model = ManufacturingStat1
         fields = "__all__"
 
 
 class ProductionLineForm(forms.ModelForm):
     class Meta:
-        model = ProductionLine
+        model = ProductionLine1
         fields = "__all__"
 
 
 class PartnerForm(forms.ModelForm):
     class Meta:
-        model = Partner
+        model = Partner1
         fields = "__all__"
 
 
 class PartnershipBenefitForm(forms.ModelForm):
     class Meta:
-        model = PartnershipBenefit
+        model = PartnershipBenefit1
         fields = "__all__"
 
 
 class GalleryCategoryForm(forms.ModelForm):
     class Meta:
-        model = GalleryCategory
+        model = GalleryCategory1
         fields = "__all__"
 
 
 class GalleryForm(forms.ModelForm):
     class Meta:
-        model = Gallery
+        model = Gallery1
         fields = "__all__"
 
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model = Category
+        model = Category1
         fields = "__all__"
 
 
 class NewsForm(forms.ModelForm):
     class Meta:
-        model = News
+        model = News1
         fields = "__all__"

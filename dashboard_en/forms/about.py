@@ -1,72 +1,68 @@
 from django import forms
-from medical.models import (
-    Service, Feature, Contact, Internet,
-    Mission, MissionPoint, Statistic, Value,
-    Achievement, Member, History
-)
+from medical_en.models import *
 
 
 class ServiceForm(forms.ModelForm):
     class Meta:
-        model = Service
+        model = Service1
         fields = "__all__"
 
 
 class FeatureForm(forms.ModelForm):
     class Meta:
-        model = Feature
+        model = Feature1
         fields = "__all__"
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = Contact
+        model = Contact1
         fields = "__all__"
 
 
 class InternetForm(forms.ModelForm):
     class Meta:
-        model = Internet
+        model = Internet1
         fields = "__all__"
 
 
 class MissionForm(forms.ModelForm):
     class Meta:
-        model = Mission
+        model = Mission1
         fields = "__all__"
 
 
 class MissionPointForm(forms.ModelForm):
     class Meta:
-        model = MissionPoint
+        model = MissionPoint1
         fields = "__all__"
 
 
 class StatisticForm(forms.ModelForm):
     class Meta:
-        model = Statistic
+        model = Statistic1
         fields = "__all__"
 
 
 class ValueForm(forms.ModelForm):
     class Meta:
-        model = Value
+        model = Value1
         fields = "__all__"
 
 
 class AchievementForm(forms.ModelForm):
     class Meta:
-        model = Achievement
+        model = Achievement1
         fields = "__all__"
 
 
 class MemberForm(forms.ModelForm):
     class Meta:
-        model = Member
+        model = Member1
         fields = "__all__"
 
 
 class HistoryForm(forms.ModelForm):
     class Meta:
-        model = History
+        model = History1
         fields = "__all__"
