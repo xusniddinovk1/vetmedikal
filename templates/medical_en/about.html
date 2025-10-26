@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% load static %}
+{% load humanize %}
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz haqimizda - Vedmedikal</title>
+    <link rel="stylesheet" href="{% static 'medical/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>Vetmedikal</span>
+            </div>
+                        <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{% url 'home' %}" class="nav-link">Bosh sahifa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="nav-link">Biz haqimizda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'products' %}" class="nav-link active">Mahsulotlar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'partners' %}" class="nav-link">Hamkorlar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'news' %}" class="nav-link">Yangiliklar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'gallery' %}" class="nav-link">Galereya</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Company Overview -->
+<section class="about-overview">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                {% if mission %}
+                <h2>{{ mission.title }}</h2>
+                <p>{{ mission.context }}</p>
+                {% endif %}
+
+                <div class="mission-points">
+                    {% for point in points %}
+                    <div class="mission-point">
+                        <i class="{{ point.icon }}"></i>
+                        <div>
+                            <h4>{{ point.title }}</h4>
+                            <p>{{ point.context }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="company-stats">
+                    {% for stat in stats %}
+                    <div class="stat-item">
+                        <div class="stat-number">{{ stat.name }}</div>
+                        <div class="stat-label">{{ stat.number }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="about-image">
+                {% if mission.image %}
+                <img src="{{ mission.image.url }}" alt="{{ mission.title }}">
+                {% endif %}
+                <div class="image-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Values Section -->
+<section class="values">
+    <div class="container">
+        <div class="section-header">
+            <h2>Bizning qadriyatlarimiz</h2>
+            <p>Kompaniyamizning asosiy tamoyillari va qadriyatlari</p>
+        </div>
+        <div class="values-grid">
+            {% for value in values %}
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas {{ value.icon }}"></i>
+                </div>
+                <h3>{{ value.title }}</h3>
+                <p>{{ value.context }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements">
+    <div class="container">
+        <div class="section-header">
+            <h2>Bizning yutuqlarimiz</h2>
+            <p>Vedmedikal kompaniyasining erishgan muvaffaqiyatlari</p>
+        </div>
+        <div class="achievements-grid">
+            {% for achievement in achievements %}
+            <div class="achievement-card">
+                <div class="achievement-icon">
+                    <i class="fas {{ achievement.icon }}"></i>
+                </div>
+                <h3>{{ achievement.title }}</h3>
+                <p>{{ achievement.context }}</p>
+                <div class="achievement-year">{{ achievement.year }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team">
+    <div class="container">
+        <div class="section-header">
+            <h2>Bizning jamoamiz</h2>
+            <p>Tajribali mutaxassislar va yetakchi olimlar</p>
+        </div>
+        <div class="team-grid">
+            {% for member in members %}
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="{{ member.image.url }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                    <h3>{{ member.name }}</h3>
+                    <p class="member-position">{{ member.position }}</p>
+                    <p class="member-description">{{ member.bio }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- History Timeline -->
+<section class="history">
+    <div class="container">
+        <div class="section-header">
+            <h2>Bizning tariximiz</h2>
+            <p>Vedmedikal kompaniyasining rivojlanish bosqichlari</p>
+        </div>
+        <div class="timeline">
+            {% for history in histories %}
+            <div class="timeline-item">
+                <div class="timeline-year">{{ history.year }}</div>
+                <div class="timeline-content">
+                    <h3>{{ history.title }}</h3>
+                    <p>{{ history.context }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+<!--                    <i class="fas fa-paw"></i>-->
+                    <span>Vedmedikal</span>
+                </div>
+                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi.</p>
+                <div class="social-links">
+                    {% for int in internet %}
+                    <a href="{{ int.link }}" target="_blank">
+                        <i class="{{ int.icon }}"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Tezkor havolalar</h3>
+                <ul>
+                    <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
+                    <li><a href="{% url 'products' %}">Mahsulotlar</a></li>
+                    <li><a href="{% url 'news' %}">Yangiliklar</a></li>
+                    <li><a href="{% url 'gallery' %}">Galereya</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Mahsulotlar</h3>
+                <ul>
+                    <li><a href="{% url 'products' %}">Tovuq vaksinasi</a></li>
+                    <li><a href="{% url 'products' %}">Mushuk vaksinasi</a></li>
+                    <li><a href="{% url 'products' %}">Antiparazitar dorilar</a></li>
+                    <li><a href="{% url 'products' %}">Vitaminlar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Aloqa</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ contact.address }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>{{ contact.phone_number }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ contact.email }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vetmedikal. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'medical/js/script.js' %}"></script>
+</body>
+</html>

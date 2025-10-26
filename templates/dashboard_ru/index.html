@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+{% load humanize %}
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="{% static 'dashboard/js/script.js' %}"></script>
+</head>
+<body>
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">AdminPanel</h2>
+        <nav class="nav">
+            <a href="{% url 'home_page' %}" class="nav-link">Dashboard</a>
+            <a href="{% url 'gallery_category_list' %}" class="nav-link">Galeriya kategoriyasi</a>
+            <a href="{% url 'product_category_list' %}" class="nav-link">Mahsulot kategriyasi</a>
+            <a href="{% url 'category_list' %}" class="nav-link">Yangiliklar categoriyasi</a>
+            <a href="{% url 'service_list' %}" class="nav-link">Xizmatlarimiz</a>
+            <a href="{% url 'mission_list' %}" class="nav-link">Biz haqimizda</a>
+            <a href="{% url 'news_list' %}" class="nav-link">Yangiliklar</a>
+            <a href="{% url 'product_list' %}" class="nav-link">Mahsulotlar</a>
+            <a href="{% url 'overview_list' %}" class="nav-link">Ishlab chiqarish</a>
+            <a href="{% url 'stat_list' %}" class="nav-link">Ishlab chiqarish statistika</a>
+            <a href="{% url 'line_list' %}" class="nav-link">Mahsulot liniyalari</a>
+            <a href="{% url 'partner_list' %}" class="nav-link">Hamkorlar</a>
+            <a href="{% url 'benefit_list' %}" class="nav-link">Hamkorlar afzalliklari</a>
+            <a href="{% url 'gallery_list' %}" class="nav-link">Galeriya</a>
+            <a href="{% url 'feature_list' %}" class="nav-link">Xususiyatlar</a>
+            <a href="{% url 'product_feature_list' %}" class="nav-link">Mahsulotlar xususiyatlari</a>
+            <a href="{% url 'contact_list' %}" class="nav-link">Bog'lanish</a>
+            <a href="{% url 'internet_list' %}" class="nav-link">Ijtimoiy tarmoqlar</a>
+            <a href="{% url 'mission_list' %}" class="nav-link">Missiyalar</a>
+            <a href="{% url 'mission_point_list' %}" class="nav-link">Missiya point</a>
+            <a href="{% url 'statistic_list' %}" class="nav-link">Statistika</a>
+            <a href="{% url 'value_list' %}" class="nav-link">Qadriyatlar</a>
+            <a href="{% url 'achievement_list' %}" class="nav-link">Yutuqlar</a>
+            <a href="{% url 'member_list' %}" class="nav-link">Jamoa a'zolari</a>
+            <a href="{% url 'history_list' %}" class="nav-link">Tarix</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Boshqaruv paneli</h1>
+            <div class="header-right">
+                <button class="toggle-theme" id="theme-toggle">🌙</button>
+                <div class="userbar" id="userbar">
+                    {% if user.avatar %}
+                    <img src="{{ user.avatar.url }}?v={{ timestamp }}" alt="Avatar"
+                         style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
+                    {% else %}
+                    <img src="https://i.pravatar.cc/100" alt="Default Avatar"
+                         style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
+                    {% endif %}
+                    <span class="username">{{ request.user }}</span>
+
+                    <div class="dropdown" id="user-dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'my_profile' %}">My Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="{% url 'logout_page' %}">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cards -->
+        <div class="cards">
+            {% for item in items %}
+            <div class="card">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-3xl" style="color: {{ item.color }}">
+                        <i class="fa {{ item.icon }}"></i>
+                    </div>
+                    <div class="text-right">
+                        <h2 class="text-xl font-bold">{{ item.count|intcomma }}</h2>
+                        <p class="text-sm text-gray-500">{{ item.label }}</p>
+                    </div>
+                </div>
+                <canvas id="chart-{{ forloop.counter }}" height="80"></canvas>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+
+<!-- Chart Rendering -->
+<script>
+    {% for item in items %}
+    const ctx{{ forloop.counter }} = document.getElementById("chart-{{ forloop.counter }}").getContext("2d");
+    new Chart(ctx{{ forloop.counter }}, {
+      type: 'bar',
+      data: {
+        labels: ['A', 'B', 'C'],
+        datasets: [{
+          label: '{{ item.label }}',
+          data: {{ item.chart_data|safe }},
+          backgroundColor: 'rgba(59, 130, 246, 0.6)',
+          borderRadius: 5,
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { display: false },
+          y: { display: false }
+        }
+      }
+    });
+    {% endfor %}
+</script>
+</body>
+</html>
+
+

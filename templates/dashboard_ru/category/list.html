@@ -1,0 +1,39 @@
+{% extends 'dashboard/base.html' %}
+{% load humanize %}
+
+{% block title %}Kategoriya List{% endblock %}
+{% block page_header %}Kategoriya List{% endblock %}
+
+{% block content %}
+<div class="container center-content">
+    <div style="text-align: right; margin-bottom: 1rem;">
+        <a href="{% url 'category_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
+    </div>
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="title">Nomi</th>
+                <th class="actions">Amallar</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for txt in items %}
+            <tr>
+                <td class="title">{{ txt.name }}</td>
+
+                <td class="actions">
+                    <a href="{% url 'category_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'category_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">Ma’lumot topilmadi.</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
