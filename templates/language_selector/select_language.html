@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tilni tanlang</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url("/static/lager/img/asosiy_rasm.JPG");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Forma konteyneri (markazga va yuqoriga joylashgan) */
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* yuqoriga */
+        gap: 15px;
+        padding-top: 40px; /* yuqoridan biroz bo‘sh joy */
+        flex-wrap: wrap;
+      }
+
+      form button {
+        background: rgba(255, 255, 255, 0.85);
+        border: none;
+        color: #34df12;
+        font-weight: 600;
+        padding: 15px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease, color 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+      }
+
+      form button:hover {
+        background: #2eb314;
+        color: white;
+        box-shadow: 0 6px 20px rgba(37, 117, 252, 0.7);
+      }
+
+      @media (max-width: 480px) {
+        form {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        form button {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" name="language" value="uz">O'zbekcha</button>
+      <button type="submit" name="language" value="ru">Русский</button>
+      <button type="submit" name="language" value="en">English</button>
+    </form>
+  </body>
+</html>
