@@ -9,9 +9,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = env("DEBUG") == "True"
+DEBUG = True
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'dashboard',
     'dashboard_ru',
     'dashboard_en',
+
+    'language_selector',
     'custom_auth',
 ]
 

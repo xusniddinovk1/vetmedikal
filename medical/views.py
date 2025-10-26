@@ -1,7 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import *
-from .models.mics import ManufacturingOverview, ProductionLine, Partner, PartnershipBenefit, GalleryCategory, Gallery, \
-    News
+from medical.models import *
 
 
 def home_page(request):
