@@ -24,7 +24,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'medical',
+    'medical_ru',
+    'medical_en',
     'dashboard',
+    'dashboard_ru',
+    'dashboard_en',
     'custom_auth',
 ]
 
