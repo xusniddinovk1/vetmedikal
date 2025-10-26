@@ -15,7 +15,7 @@ def home_page(request):
         "contact": contact,
         'internet': internet
     }
-    return render(request, "medical/index.html", ctx)
+    return render(request, "medical_en/index.html", ctx)
 
 
 def about(request):
@@ -33,7 +33,7 @@ def about(request):
         "contact": Contact1.objects.first(),
         "internet": Internet1.objects.all(),
     }
-    return render(request, "medical/about.html", ctx)
+    return render(request, "medical_en/about.html", ctx)
 
 
 def manufacturing_page(request):
@@ -42,7 +42,7 @@ def manufacturing_page(request):
     stats = ManufacturingStat1.objects.all()
     contact = Contact1.objects.first()
     internet = Internet1.objects.all()
-    return render(request, "medical/manufacturing.html", {
+    return render(request, "medical_en/manufacturing.html", {
         "overview": overview,
         "stats": stats,
         "lines": lines,
@@ -56,7 +56,7 @@ def partners_page(request):
     benefits = PartnershipBenefit1.objects.all()
     contact = Contact1.objects.first()
     internet = Internet1.objects.all()
-    return render(request, "medical/partners.html", {
+    return render(request, "medical_en/partners.html", {
         "partners": partners,
         "benefits": benefits,
         "contact": contact,
@@ -76,7 +76,7 @@ def gallery_page(request):
         'internet': internet
     }
 
-    return render(request, "medical/gallery.html", ctx)
+    return render(request, "medical_en/gallery.html", ctx)
 
 
 def product_list(request):
@@ -86,7 +86,7 @@ def product_list(request):
     contact = Contact1.objects.first()
     internet = Internet1.objects.all()
 
-    return render(request, "medical/products.html", {
+    return render(request, "medical_en/products.html", {
         "categories": categories,
         "products": products,
         "features": features,
@@ -101,7 +101,7 @@ def product_detail(request, pk):
     contact = Contact1.objects.first()
     internet = Internet1.objects.all()
 
-    return render(request, "medical/product_detail.html", {
+    return render(request, "medical_en/product_detail.html", {
         "product": product,
         "related_products": related_products,
         "contact": contact,
@@ -118,7 +118,7 @@ def news_page(request):
         "contact": contact,
         'internet': internet
     }
-    return render(request, 'medical/news.html', ctx)
+    return render(request, 'medical_en/news.html', ctx)
 
 
 def news_detail(request, id):
@@ -130,4 +130,4 @@ def news_detail(request, id):
         "contact": contact,
         'internet': internet
     }
-    return render(request, 'medical/news_detail.html', ctx)
+    return render(request, 'medical_en/news_detail.html', ctx)
