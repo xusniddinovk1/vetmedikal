@@ -23,8 +23,8 @@
         <p><strong>Is superuser:</strong> {{ user.is_superuser }}</p>
     </div>
 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
-    <a href="{% url 'profile_edit' %}" class="btn-edit">✏️ Profilni tahrirlash</a>
-    <a href="{% url 'change_password' %}" class="btn-edit">🔒 Parolni o‘zgartirish</a>
+    <a href="{% url 'en-admin:profile_edit' %}" class="btn-edit">✏️ Profilni tahrirlash</a>
+    <a href="{% url 'en-admin:change_password' %}" class="btn-edit">🔒 Parolni o‘zgartirish</a>
 </div>
 
 </div>

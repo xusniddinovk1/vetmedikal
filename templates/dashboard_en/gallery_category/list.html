@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container center-content">
     <div style="text-align: right; margin-bottom: 1rem;">
-        <a href="{% url 'gallery_category_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
+        <a href="{% url 'en-admin:gallery_category_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
     </div>
     <div class="table-wrapper">
         <table class="table">
@@ -23,8 +23,8 @@
                 <td class="title">{{ txt.name }}</td>
 
                 <td class="actions">
-                    <a href="{% url 'gallery_category_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
-                    <a href="{% url 'gallery_category_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
+                    <a href="{% url 'en-admin:gallery_category_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'en-admin:gallery_category_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
             {% empty %}
