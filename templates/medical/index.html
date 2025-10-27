@@ -18,8 +18,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="{% static '/images/fon/Vetmedikal Logo1.png'%}">
-<!--                <span>Vetmedikal</span>-->
+<!--                <div class="header__logo">-->
+<!--                    <img src="{% static '/images/fon/logo3.png'%}">-->
+<!--                </div>-->
+                                <span>Vetmedikal</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -58,7 +60,9 @@
 <section class="hero">
     <div class="hero-content">
         <h1 class="hero-title">Parrandalar uchun sifatli premixlar va vaksinalar</h1>
-        <p class="hero-description">Vetmedikal - parrandachilik uchun eng sifatli va ishonchli chet el mahsulotlarini taklif etuvchi kompaniya. Bizning premiks va vaksinalar xalqaro standartlarga javob beradi, samaradorligi esa amaliyotda isbotlangan.</p>
+        <p class="hero-description">Vetmedikal - parrandachilik uchun eng sifatli va ishonchli chet el mahsulotlarini
+            taklif etuvchi kompaniya. Bizning premiks va vaksinalar xalqaro standartlarga javob beradi, samaradorligi
+            esa amaliyotda isbotlangan.</p>
         <div class="hero-buttons">
             <a href="{% url 'uz:products'%}" class="btn btn-primary">Mahsulotlarimiz</a>
             <a href="{% url 'uz:about' %}" class="btn btn-secondary">Biz haqimizda</a>
@@ -107,7 +111,7 @@
                 </div>
             </div>
             <div class="features-image">
-                <img src="{% static '/images/fon/main_img_2.jpg'%}"
+                <img src="{% static '/images/fon/Vetmedikal Logo1.png'%}"
                      alt="Veterinar klinika"/>
             </div>
         </div>
@@ -141,7 +145,8 @@
                     <i class="fas fa-paw"></i>
                     <span>Vedmedikal</span>
                 </div>
-                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi.</p>
+                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va
+                    vaksinalarni taqdim etadi.</p>
                 <div class="social-links">
                     {% for int in internet %}
                     <a href="{{ int.link }}" target="_blank">

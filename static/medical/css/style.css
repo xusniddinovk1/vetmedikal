@@ -38,10 +38,6 @@ body {
     font-size: 28px;
     font-weight: 700;
 }
-.nav-logo img{
-    width: 70px;
-    height: 70px;
-}
 .nav-container {
   display: flex;
   justify-content: space-between;
