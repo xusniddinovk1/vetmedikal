@@ -9,7 +9,7 @@ from .forms import *
 
 
 def login_required_decorator(func):
-    return login_required(func, login_url='en-admin:login_page')
+    return login_required(func, login_url='en-admin:login_page1')
 
 
 def login_page1(request):
@@ -20,7 +20,7 @@ def login_page1(request):
         user = authenticate(request, phone_number=phone, password=password)
         if user:
             login(request, user)
-            return redirect('en-admin:home_page')
+            return redirect('en-admin:home_page1')
         else:
             return render(request, "dashboard_en/login.html", {"error": "Incorrect credentials"})
 
@@ -30,7 +30,7 @@ def login_page1(request):
 @login_required_decorator
 def logout_page1(request):
     logout(request)
-    return redirect('en-admin:login_page')
+    return redirect('en-admin:login_page1')
 
 
 @login_required_decorator
@@ -48,7 +48,7 @@ def profile_edit1(request):
         form = ProfileForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('en-admin:my_profile')
+            return redirect('en-admin:my_profile1')
     else:
         form = ProfileForm(instance=user)
 
@@ -146,7 +146,7 @@ def service_create1(request):
     form = ServiceForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:service_list")
+        return redirect("en-admin:service_list1")
     return render(request, "dashboard_en/service/form.html", {"form": form})
 
 
@@ -155,14 +155,14 @@ def service_edit1(request, id):
     form = ServiceForm(request.POST or None, request.FILES or None, instance=service)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:service_list")
+        return redirect("en-admin:service_list1")
     return render(request, "dashboard_en/service/form.html", {"form": form, "service": service})
 
 
 def service_delete1(request, id):
     service = get_object_or_404(Service1, id=id)
     service.delete()
-    return redirect("en-admin:service_list")
+    return redirect("en-admin:service_list1")
 
 
 # ==============================
@@ -177,7 +177,7 @@ def feature_create1(request):
     form = FeatureForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:feature_list")
+        return redirect("en-admin:feature_list1")
     return render(request, "dashboard_en/feature/form.html", {"form": form})
 
 
@@ -186,14 +186,14 @@ def feature_edit1(request, id):
     form = FeatureForm(request.POST or None, request.FILES or None, instance=feature)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:feature_list")
+        return redirect("en-admin:feature_list1")
     return render(request, "dashboard_en/feature/form.html", {"form": form, "feature": feature})
 
 
 def feature_delete1(request, id):
     feature = get_object_or_404(Feature1, id=id)
     feature.delete()
-    return redirect("en-admin:feature_list")
+    return redirect("en-admin:feature_list1")
 
 
 # ==============================
@@ -208,7 +208,7 @@ def contact_create1(request):
     form = ContactForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("contact_listen-admin:")
+        return redirect("en-admin:contact_list1")
     return render(request, "dashboard_en/contact/form.html", {"form": form})
 
 
@@ -217,14 +217,14 @@ def contact_edit1(request, id):
     form = ContactForm(request.POST or None, instance=contact)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:contact_list")
+        return redirect("en-admin:contact_list1")
     return render(request, "dashboard_en/contact/form.html", {"form": form, "contact": contact})
 
 
 def contact_delete1(request, id):
     contact = get_object_or_404(Contact1, id=id)
     contact.delete()
-    return redirect("en-admin:contact_list")
+    return redirect("en-admin:contact_list1")
 
 
 # ==============================
@@ -239,7 +239,7 @@ def internet_create1(request):
     form = InternetForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:internet_list")
+        return redirect("en-admin:internet_list1")
     return render(request, "dashboard_en/internet/form.html", {"form": form})
 
 
@@ -248,14 +248,14 @@ def internet_edit1(request, id):
     form = InternetForm(request.POST or None, instance=item)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:internet_list")
+        return redirect("en-admin:internet_list1")
     return render(request, "dashboard_en/internet/form.html", {"form": form, "item": item})
 
 
 def internet_delete1(request, id):
     item = get_object_or_404(Internet1, id=id)
     item.delete()
-    return redirect("en-admin:internet_list")
+    return redirect("en-admin:internet_list1")
 
 
 # ==============================
@@ -270,7 +270,7 @@ def mission_create1(request):
     form = MissionForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:mission_list")
+        return redirect("en-admin:mission_list1")
     return render(request, "dashboard_en/mission/form.html", {"form": form})
 
 
@@ -279,14 +279,14 @@ def mission_edit1(request, id):
     form = MissionForm(request.POST or None, request.FILES or None, instance=mission)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:mission_list")
+        return redirect("en-admin:mission_list1")
     return render(request, "dashboard_en/mission/form.html", {"form": form, "mission": mission})
 
 
 def mission_delete1(request, id):
     mission = get_object_or_404(Mission1, id=id)
     mission.delete()
-    return redirect("en-admin:mission_list")
+    return redirect("en-admin:mission_list1")
 
 
 # ==============================
@@ -301,7 +301,7 @@ def mission_point_create1(request):
     form = MissionPointForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:mission_point_list")
+        return redirect("en-admin:mission_point_list1")
     return render(request, "dashboard_en/mission_point/form.html", {"form": form})
 
 
@@ -310,14 +310,14 @@ def mission_point_edit1(request, id):
     form = MissionPointForm(request.POST or None, instance=point)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:mission_point_list")
+        return redirect("en-admin:mission_point_list1")
     return render(request, "dashboard_en/mission_point/form.html", {"form": form, "point": point})
 
 
 def mission_point_delete1(request, id):
     point = get_object_or_404(MissionPoint1, id=id)
     point.delete()
-    return redirect("en-admin:mission_point_list")
+    return redirect("en-admin:mission_point_list1")
 
 
 # ==============================
@@ -332,7 +332,7 @@ def statistic_create1(request):
     form = StatisticForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:statistic_list")
+        return redirect("en-admin:statistic_list1")
     return render(request, "dashboard_en/statistic/form.html", {"form": form})
 
 
@@ -341,14 +341,14 @@ def statistic_edit1(request, id):
     form = StatisticForm(request.POST or None, instance=stat)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:statistic_list")
+        return redirect("en-admin:statistic_list1")
     return render(request, "dashboard_en/statistic/form.html", {"form": form, "stat": stat})
 
 
 def statistic_delete1(request, id):
     stat = get_object_or_404(Statistic1, id=id)
     stat.delete()
-    return redirect("en-admin:statistic_list")
+    return redirect("en-admin:statistic_list1")
 
 
 # ==============================
@@ -363,7 +363,7 @@ def value_create1(request):
     form = ValueForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:value_list")
+        return redirect("en-admin:value_list1")
     return render(request, "dashboard_en/value/form.html", {"form": form})
 
 
@@ -372,14 +372,14 @@ def value_edit1(request, id):
     form = ValueForm(request.POST or None, instance=value)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:value_list")
+        return redirect("en-admin:value_list1")
     return render(request, "dashboard_en/value/form.html", {"form": form, "value": value})
 
 
 def value_delete1(request, id):
     value = get_object_or_404(Value1, id=id)
     value.delete()
-    return redirect("en-admin:value_list")
+    return redirect("en-admin:value_list1")
 
 
 # ==============================
@@ -394,7 +394,7 @@ def achievement_create1(request):
     form = AchievementForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:achievement_list")
+        return redirect("en-admin:achievement_list1")
     return render(request, "dashboard_en/achievement/form.html", {"form": form})
 
 
@@ -403,14 +403,14 @@ def achievement_edit1(request, id):
     form = AchievementForm(request.POST or None, instance=achievement)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:achievement_list")
+        return redirect("en-admin:achievement_list1")
     return render(request, "dashboard_en/achievement/form.html", {"form": form, "achievement": achievement})
 
 
 def achievement_delete1(request, id):
     achievement = get_object_or_404(Achievement1, id=id)
     achievement.delete()
-    return redirect("en-admin:achievement_list")
+    return redirect("en-admin:achievement_list1")
 
 
 # ==============================
@@ -425,7 +425,7 @@ def member_create1(request):
     form = MemberForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:member_list")
+        return redirect("en-admin:member_list1")
     return render(request, "dashboard_en/member/form.html", {"form": form})
 
 
@@ -434,14 +434,14 @@ def member_edit1(request, id):
     form = MemberForm(request.POST or None, request.FILES or None, instance=member)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:member_list")
+        return redirect("en-admin:member_list1")
     return render(request, "dashboard_en/member/form.html", {"form": form, "member": member})
 
 
 def member_delete1(request, id):
     member = get_object_or_404(Member1, id=id)
     member.delete()
-    return redirect("en-admin:member_list")
+    return redirect("en-admin:member_list1")
 
 
 # ==============================
@@ -456,7 +456,7 @@ def history_create1(request):
     form = HistoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:history_list")
+        return redirect("en-admin:history_list1")
     return render(request, "dashboard_en/history/form.html", {"form": form})
 
 
@@ -465,14 +465,14 @@ def history_edit1(request, id):
     form = HistoryForm(request.POST or None, instance=history)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:history_list")
+        return redirect("en-admin:history_list1")
     return render(request, "dashboard_en/history/form.html", {"form": form, "history": history})
 
 
 def history_delete1(request, id):
     history = get_object_or_404(History1, id=id)
     history.delete()
-    return redirect("en-admin:history_list")
+    return redirect("en-admin:history_list1")
 
 
 # ---------------- MANUFACTURING OVERVIEW ----------------
@@ -485,7 +485,7 @@ def manufacturing_overview_create1(request):
     form = ManufacturingOverviewForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:overview_list')
+        return redirect('en-admin:overview_list1')
     return render(request, 'dashboard_en/overview/form.html', {'form': form})
 
 
@@ -494,14 +494,14 @@ def manufacturing_overview_edit1(request, id):
     form = ManufacturingOverviewForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:overview_list')
+        return redirect('en-admin:overview_list1')
     return render(request, 'dashboard_en/overview/form.html', {'form': form, 'object': obj})
 
 
 def manufacturing_overview_delete1(request, id):
     obj = get_object_or_404(ManufacturingOverview1, id=id)
     obj.delete()
-    return redirect('en-admin:overview_list')
+    return redirect('en-admin:overview_list1')
 
 
 # ---------------- MANUFACTURING STAT ----------------
@@ -514,7 +514,7 @@ def manufacturing_stat_create1(request):
     form = ManufacturingStatForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:stat_list')
+        return redirect('en-admin:stat_list1')
     return render(request, 'dashboard_en/stat/form.html', {'form': form})
 
 
@@ -523,14 +523,14 @@ def manufacturing_stat_edit1(request, id):
     form = ManufacturingStatForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:stat_list')
+        return redirect('en-admin:stat_list1')
     return render(request, 'dashboard_en/stat/form.html', {'form': form, 'object': obj})
 
 
 def manufacturing_stat_delete1(request, id):
     obj = get_object_or_404(ManufacturingStat1, id=id)
     obj.delete()
-    return redirect('en-admin:stat_list')
+    return redirect('en-admin:stat_list1')
 
 
 # ---------------- PRODUCTION LINE ----------------
@@ -543,7 +543,7 @@ def production_line_create1(request):
     form = ProductionLineForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:line_list')
+        return redirect('en-admin:line_list1')
     return render(request, 'dashboard_en/line/form.html', {'form': form})
 
 
@@ -552,14 +552,14 @@ def production_line_edit1(request, id):
     form = ProductionLineForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:line_list')
+        return redirect('en-admin:line_list1')
     return render(request, 'dashboard_en/line/form.html', {'form': form, 'object': obj})
 
 
 def production_line_delete1(request, id):
     obj = get_object_or_404(ProductionLine1, id=id)
     obj.delete()
-    return redirect('en-admin:line_list')
+    return redirect('en-admin:line_list1')
 
 
 # ---------------- PARTNER ----------------
@@ -572,7 +572,7 @@ def partner_create1(request):
     form = PartnerForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:partner_list')
+        return redirect('en-admin:partner_list1')
     return render(request, 'dashboard_en/partner/form.html', {'form': form})
 
 
@@ -581,14 +581,14 @@ def partner_edit1(request, id):
     form = PartnerForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:partner_list')
+        return redirect('en-admin:partner_list1')
     return render(request, 'dashboard_en/partner/form.html', {'form': form, 'object': obj})
 
 
 def partner_delete1(request, id):
     obj = get_object_or_404(Partner1, id=id)
     obj.delete()
-    return redirect('en-admin:partner_list')
+    return redirect('en-admin:partner_list1')
 
 
 # ---------------- PARTNERSHIP BENEFIT ----------------
@@ -601,7 +601,7 @@ def partnership_benefit_create1(request):
     form = PartnershipBenefitForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:benefit_list')
+        return redirect('en-admin:benefit_list1')
     return render(request, 'dashboard_en/benefit/form.html', {'form': form})
 
 
@@ -610,14 +610,14 @@ def partnership_benefit_edit1(request, id):
     form = PartnershipBenefitForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:benefit_list')
+        return redirect('en-admin:benefit_list1')
     return render(request, 'dashboard_en/benefit/form.html', {'form': form, 'object': obj})
 
 
 def partnership_benefit_delete1(request, id):
     obj = get_object_or_404(PartnershipBenefit1, id=id)
     obj.delete()
-    return redirect('en-admin:benefit_list')
+    return redirect('en-admin:benefit_list1')
 
 
 # ---------------- GALLERY CATEGORY ----------------
@@ -630,7 +630,7 @@ def gallery_category_create1(request):
     form = GalleryCategoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:gallery_category_list')
+        return redirect('en-admin:gallery_category_list1')
     return render(request, 'dashboard_en/gallery_category/form.html', {'form': form})
 
 
@@ -639,14 +639,14 @@ def gallery_category_edit1(request, id):
     form = GalleryCategoryForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:gallery_category_list')
+        return redirect('en-admin:gallery_category_list1')
     return render(request, 'dashboard_en/gallery_category/form.html', {'form': form, 'object': obj})
 
 
 def gallery_category_delete1(request, id):
     obj = get_object_or_404(GalleryCategory1, id=id)
     obj.delete()
-    return redirect('en-admin:gallery_category_list')
+    return redirect('en-admin:gallery_category_list1')
 
 
 # ---------------- GALLERY ----------------
@@ -659,7 +659,7 @@ def gallery_create1(request):
     form = GalleryForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:gallery_list')
+        return redirect('en-admin:gallery_list1')
     return render(request, 'dashboard_en/gallery/form.html', {'form': form})
 
 
@@ -668,14 +668,14 @@ def gallery_edit1(request, id):
     form = GalleryForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:gallery_list')
+        return redirect('en-admin:gallery_list1')
     return render(request, 'dashboard_en/gallery/form.html', {'form': form, 'object': obj})
 
 
 def gallery_delete1(request, id):
     obj = get_object_or_404(Gallery1, id=id)
     obj.delete()
-    return redirect('en-admin:gallery_list')
+    return redirect('en-admin:gallery_list1')
 
 
 # ---------------- CATEGORY ----------------
@@ -688,7 +688,7 @@ def category_create1(request):
     form = CategoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:category_list')
+        return redirect('en-admin:category_list1')
     return render(request, 'dashboard_en/category/form.html', {'form': form})
 
 
@@ -697,14 +697,14 @@ def category_edit1(request, id):
     form = CategoryForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:category_list')
+        return redirect('en-admin:category_list1')
     return render(request, 'dashboard_en/category/form.html', {'form': form, 'object': obj})
 
 
 def category_delete1(request, id):
     obj = get_object_or_404(Category1, id=id)
     obj.delete()
-    return redirect('en-admin:category_list')
+    return redirect('en-admin:category_list1')
 
 
 # ---------------- NEWS ----------------
@@ -717,7 +717,7 @@ def news_create1(request):
     form = NewsForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:news_list')
+        return redirect('en-admin:news_list1')
     return render(request, 'dashboard_en/news/form.html', {'form': form})
 
 
@@ -726,7 +726,7 @@ def news_edit1(request, id):
     form = NewsForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('en-admin:news_list')
+        return redirect('en-admin:news_list1')
     return render(request, 'dashboard_en/news/form.html', {'form': form, 'object': obj})
 
 
@@ -745,7 +745,7 @@ def product_category_create1(request):
     form = ProductCategoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:product_category_list")
+        return redirect("en-admin:product_category_list1")
     return render(request, "dashboard_en/category/form.html", {"form": form})
 
 
@@ -754,14 +754,14 @@ def product_category_edit1(request, id):
     form = ProductCategoryForm(request.POST or None, instance=category)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:product_category_list")
+        return redirect("en-admin:product_category_list1")
     return render(request, "dashboard_en/category/form.html", {"form": form, "category": category})
 
 
 def product_category_delete1(request, id):
     category = get_object_or_404(ProductCategory1, id=id)
     category.delete()
-    return redirect("en-admin:product_category_list")
+    return redirect("en-admin:product_category_list1")
 
 
 # ==============================
@@ -776,7 +776,7 @@ def product_create1(request):
     form = ProductForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:product_list")
+        return redirect("en-admin:product_list1")
     return render(request, "dashboard_en/product/form.html", {"form": form})
 
 
@@ -785,14 +785,14 @@ def product_edit1(request, id):
     form = ProductForm(request.POST or None, request.FILES or None, instance=product)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:product_list")
+        return redirect("en-admin:product_list1")
     return render(request, "dashboard_en/product/form.html", {"form": form, "product": product})
 
 
 def product_delete1(request, id):
     product = get_object_or_404(Product1, id=id)
     product.delete()
-    return redirect("en-admin:product_list")
+    return redirect("en-admin:product_list1")
 
 
 # ==============================
@@ -807,7 +807,7 @@ def product_feature_create1(request):
     form = ProductFeatureForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:product_feature_list")
+        return redirect("en-admin:product_feature_list1")
     return render(request, "dashboard_en/product_feature/form.html", {"form": form})
 
 
@@ -816,14 +816,14 @@ def product_feature_edit1(request, id):
     form = ProductFeatureForm(request.POST or None, instance=feature)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:product_feature_list")
+        return redirect("en-admin:product_feature_list1")
     return render(request, "dashboard_en/product_feature/form.html", {"form": form, "feature": feature})
 
 
 def product_feature_delete1(request, id):
     feature = get_object_or_404(ProductFeature1, id=id)
     feature.delete()
-    return redirect("en-admin:product_feature_list")
+    return redirect("en-admin:product_feature_list1")
 
 
 # ==============================
@@ -838,7 +838,7 @@ def image_create1(request):
     form = ProductImageForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:image_list")
+        return redirect("en-admin:image_list1")
     return render(request, "dashboard_en/image/form.html", {"form": form})
 
 
@@ -847,7 +847,7 @@ def image_edit1(request, id):
     form = ProductImageForm(request.POST or None, request.FILES or None, instance=image)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("en-admin:image_list")
+        return redirect("en-admin:image_list1")
     return render(request, "dashboard_en/image/form.html", {"form": form, "image": image})
 
 
