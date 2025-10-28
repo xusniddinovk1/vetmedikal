@@ -5,12 +5,12 @@ app_name = 'medical_ru'
 
 urlpatterns = [
     path('', views.home_page, name='home'),
-    path("about/", views.about, name="about"),
-    path("manufacturing/", views.manufacturing_page, name="manufacturing"),
-    path("partners/", views.partners_page, name="partners"),
-    path("galleries/", views.gallery_page, name="gallery"),
-    path("products/", views.product_list, name="products"),
-    path("product/<int:pk>/", views.product_detail, name="product_detail"),
-    path('news/', views.news_page, name='news'),
-    path('news/<int:id>/', views.news_detail, name='news_detail'),
+    path("о_нас/", views.about, name="about"),
+    path("производство/", views.manufacturing_page, name="manufacturing"),
+    path("партнёры/", views.partners_page, name="partners"),
+    path("галерея/", views.gallery_page, name="gallery"),
+    path("продукция/", views.product_list, name="products"),
+    path("продукция/<int:pk>/", views.product_detail, name="product_detail"),
+    path('новости/', views.news_page, name='news'),
+    path('новости/<int:id>/', views.news_detail, name='news_detail'),
 ]

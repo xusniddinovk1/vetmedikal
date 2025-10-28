@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
 {% load humanize %}
-<html lang="uz">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamkorlar - Vedmedikal</title>
+    <title>Партнёры - Vetmedikal</title>
     <link rel="stylesheet" href="{% static 'medical/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,25 +22,25 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'ru:home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'ru:home' %}" class="nav-link">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'ru:about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'ru:about' %}" class="nav-link">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'ru:products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'ru:products' %}" class="nav-link active">Продукция</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'ru:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'ru:manufacturing' %}" class="nav-link">Результаты на ферме</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'ru:partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'ru:partners' %}" class="nav-link">Партнёры</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'ru:news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'ru:news' %}" class="nav-link">Новости</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'ru:gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'ru:gallery' %}" class="nav-link">Галерея</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -55,8 +55,8 @@
 <section class="partners-overview">
     <div class="container">
         <div class="section-header">
-            <h2>Bizning chet ellik hamkorlarimiz</h2>
-            <p>{{ partners.count }}+ mamlakatda ishonchli hamkorlar bilan birga ishlaymiz</p>
+            <h2>Наши зарубежные партнёры</h2>
+            <p>Работаем с надёжными партнёрами в более чем {{ partners.count }} странах</p>
         </div>
         <div class="partners-grid">
             {% for partner in partners %}
@@ -67,7 +67,7 @@
                 <h3>{{ partner.name }}</h3>
                 <p>{{ partner.description }}</p>
                 {% if partner.website %}
-                <a href="{{ partner.website }}" style="text-decoration: none;" target="_blank">Saytga o‘tish</a>
+                <a href="{{ partner.website }}" style="text-decoration: none;" target="_blank">Перейти на сайт</a>
                 {% endif %}
             </div>
             {% endfor %}
@@ -79,8 +79,8 @@
 <section class="partnership-benefits">
     <div class="container">
         <div class="section-header">
-            <h2>Hamkorlik afzalliklari</h2>
-            <p>Bizning hamkorlarimizga taqdim etadigan imkoniyatlar</p>
+            <h2>Преимущества партнёрства</h2>
+            <p>Возможности, которые мы предоставляем нашим партнёрам</p>
         </div>
         <div class="benefits-grid">
             {% for benefit in benefits %}
@@ -102,10 +102,10 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <i class="fas fa-paw"></i>
-                    <span>Vedmedikal</span>
+                    <span>Vetmedikal</span>
                 </div>
-                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premix va vaksinalarni taqdim etadi.</p>
+                <p>Мы предлагаем проверенные, качественные и надёжные зарубежные премиксы и вакцины для здоровья
+                    птиц.</p>
                 <div class="social-links">
                     {% for int in internet %}
                     <a href="{{ int.link }}" target="_blank">
@@ -115,25 +115,25 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Tezkor havolalar</h3>
+                <h3>Быстрые ссылки</h3>
                 <ul>
-                    <li><a href="{% url 'ru:about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'ru:products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'ru:news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'ru:gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'ru:about' %}">О нас</a></li>
+                    <li><a href="{% url 'ru:products' %}">Продукция</a></li>
+                    <li><a href="{% url 'ru:news' %}">Новости</a></li>
+                    <li><a href="{% url 'ru:gallery' %}">Галерея</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Mahsulotlar</h3>
+                <h3>Продукция</h3>
                 <ul>
-                    <li><a href="{% url 'ru:products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'ru:products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'ru:products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'ru:products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'ru:products' %}">Вакцины для кур</a></li>
+                    <li><a href="{% url 'ru:products' %}">Вакцины для кошек</a></li>
+                    <li><a href="{% url 'ru:products' %}">Антипаразитарные препараты</a></li>
+                    <li><a href="{% url 'ru:products' %}">Витамины</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Aloqa</h3>
+                <h3>Контакты</h3>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -151,7 +151,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vetmedikal. Barcha huquqlar himoyalangan.</p>
+            <p>&copy; 2024 Vetmedikal. Все права защищены.</p>
         </div>
     </div>
 </footer>
