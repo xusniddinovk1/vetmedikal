@@ -18,7 +18,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to="products/")  # asosiy rasm
     badge = models.CharField(max_length=50, blank=True, null=True)  # "Yangi", "Mashhur"
     specs = models.JSONField(default=dict, blank=True)  # {"hajm": "1ml", "harorat": "2-8°C"}
-    price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    price = models.PositiveIntegerField(null=True, blank=True)
     country = models.CharField(max_length=100, blank=True, null=True)
     certificates = models.CharField(max_length=255, blank=True, null=True)
 
