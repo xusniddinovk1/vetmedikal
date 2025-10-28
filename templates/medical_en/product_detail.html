@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
 {% load humanize %}
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahsulot tafsilotlari - Vedmedikal</title>
+    <title>Product Details - Vetmedical</title>
     <link rel="stylesheet" href="{% static 'medical/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,29 +19,29 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <span style="font-size: 1.9rem;">🐔</span>
-                <span style="font-size: 28px; font-weight: 700; color: #064add;">Vetmedikal</span>
+                <span style="font-size: 28px; font-weight: 700; color: #064add;">Vetmedical</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'en:home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'en:home' %}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'en:about' %}" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'en:products' %}" class="nav-link active">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'en:manufacturing' %}" class="nav-link">Farm Results</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'en:partners' %}" class="nav-link">Partners</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'en:news' %}" class="nav-link">News</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'en:gallery' %}" class="nav-link">Gallery</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -57,9 +57,9 @@
 <section class="breadcrumb">
     <div class="container">
         <nav class="breadcrumb-nav">
-            <a href="{% url 'en:home' %}">Bosh sahifa</a>
+            <a href="{% url 'en:home' %}">Home</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="{% url 'en:products' %}">Mahsulotlar</a>
+            <a href="{% url 'en:products' %}">Products</a>
             <i class="fas fa-chevron-right"></i>
             <span>{{ product.title }}</span>
         </nav>
@@ -99,7 +99,7 @@
                 {% if product.country %}
                 <div class="product-country">
                     <i class="fas fa-globe"></i>
-                    <span><strong>Ishlab chiqaruvchi davlat:</strong> {{ product.country }}</span>
+                    <span><strong>Country of Origin:</strong> {{ product.country }}</span>
                 </div>
                 {% endif %}
 
@@ -123,44 +123,44 @@
                 <!-- Pricing -->
                 <div class="product-pricing">
                     <div class="price-section">
-                        <div class="current-price">{{ product.price}} so'm</div>
+                        <div class="current-price">{{ product.price }} UZS</div>
                     </div>
                 </div>
             </div>
             <div class="product-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="openTab(event, 'description')">Ta'rif</button>
-                    <button class="tab-btn" onclick="openTab(event, 'usage')">Qo'llash yo'riqnomasi</button>
-                    <button class="tab-btn" onclick="openTab(event, 'composition')">Tarkib</button>
-                    <button class="tab-btn" onclick="openTab(event, 'reviews')">Sharhlar</button>
+                    <button class="tab-btn active" onclick="openTab(event, 'description')">Description</button>
+                    <button class="tab-btn" onclick="openTab(event, 'usage')">Instructions for Use</button>
+                    <button class="tab-btn" onclick="openTab(event, 'composition')">Composition</button>
+                    <button class="tab-btn" onclick="openTab(event, 'reviews')">Reviews</button>
                 </div>
 
                 <div class="tab-content">
                     <!-- Description -->
                     <div id="description" class="tab-panel active">
-                        <h3>Mahsulot haqida batafsil ma'lumot</h3>
+                        <h3>Detailed Product Information</h3>
                         <p>{{ product.description|linebreaks }}</p>
                     </div>
 
                     <!-- Usage -->
                     <div id="usage" class="tab-panel">
-                        <h3>Qo'llash yo'riqnomasi</h3>
+                        <h3>Instructions for Use</h3>
                         <p>{{ product.usage|linebreaks }}</p>
                     </div>
 
                     <!-- Composition -->
                     <div id="composition" class="tab-panel">
-                        <h3>Tarkib va formulation</h3>
+                        <h3>Composition and Formulation</h3>
                         <p>{{ product.composition|linebreaks }}</p>
                     </div>
 
                     <!-- Reviews -->
                     <div id="reviews" class="tab-panel">
-                        <h3>Sharhlar</h3>
+                        <h3>Reviews</h3>
                         {% if product.reviews %}
                         <p>{{ product.reviews|linebreaks }}</p>
                         {% else %}
-                        <p>Hozircha sharhlar yo‘q.</p>
+                        <p>No reviews yet.</p>
                         {% endif %}
                     </div>
                 </div>
@@ -169,7 +169,7 @@
         </div>
         <!-- Related Products -->
         <section class="related-products">
-            <h2>O'xshash mahsulotlar</h2>
+            <h2>Similar Products</h2>
             <div class="products-grid">
                 {% for p in related_products %}
                 <div class="product-card">
@@ -182,7 +182,7 @@
                         <div class="product-price">
                             <span class="current-price">${{ p.price }}</span>
                         </div>
-                        <a href="{% url 'en:product_detail' p.id %}" class="btn btn-primary">Ko‘rish</a>
+                        <a href="{% url 'en:product_detail' p.id %}" class="btn btn-primary">View</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -190,6 +190,7 @@
         </section>
     </div>
 </section>
+
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -197,9 +198,9 @@
             <div class="footer-section">
                 <div class="footer-logo">
                     <i class="fas fa-paw"></i>
-                    <span>Vedmedikal</span>
+                    <span>Vetmedical</span>
                 </div>
-                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi.</p>
+                <p>Provides tested, high-quality, and reliable foreign premixes and vaccines for poultry health.</p>
                 <div class="social-links">
                     {% for int in internet %}
                     <a href="{{ int.link }}" target="_blank">
@@ -209,25 +210,25 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Tezkor havolalar</h3>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="{% url 'en:about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'en:products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'en:news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'en:gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'en:about' %}">About Us</a></li>
+                    <li><a href="{% url 'en:products' %}">Products</a></li>
+                    <li><a href="{% url 'en:news' %}">News</a></li>
+                    <li><a href="{% url 'en:gallery' %}">Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Mahsulotlar</h3>
+                <h3>Products</h3>
                 <ul>
-                    <li><a href="{% url 'en:products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'en:products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'en:products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'en:products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'en:products' %}">Chicken Vaccine</a></li>
+                    <li><a href="{% url 'en:products' %}">Cat Vaccine</a></li>
+                    <li><a href="{% url 'en:products' %}">Antiparasitic Drugs</a></li>
+                    <li><a href="{% url 'en:products' %}">Vitamins</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Aloqa</h3>
+                <h3>Contact</h3>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -245,7 +246,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vetmedikal. Barcha huquqlar himoyalangan.</p>
+            <p>&copy; 2024 Vetmedical. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -288,8 +289,6 @@
             quantityInput.value = newValue;
         }
     }
-
-
 </script>
 </body>
 </html>

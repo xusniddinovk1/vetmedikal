@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
 {% load humanize %}
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yangiliklar - Vedmedikal</title>
+    <title>News - Vetmedical</title>
     <link rel="stylesheet" href="{% static 'medical/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,29 +19,29 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <span style="font-size: 1.9rem;">🐔</span>
-                <span style="font-size: 28px; font-weight: 700; color: #064add;">Vetmedikal</span>
+                <span style="font-size: 28px; font-weight: 700; color: #064add;">Vetmedical</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'en:home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'en:home' %}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'en:about' %}" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'en:products' %}" class="nav-link active">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'en:manufacturing' %}" class="nav-link">Farm Results</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'en:partners' %}" class="nav-link">Partners</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'en:news' %}" class="nav-link">News</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'en:gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'en:gallery' %}" class="nav-link">Gallery</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -52,6 +52,7 @@
         </div>
     </nav>
 </header>
+
 <!-- ======================= Card Section ======================= -->
 <div class="wrapper">
     <div class="card-container">
@@ -65,9 +66,7 @@
                 <p class="card-description">
                     {{ education.content|truncatechars:40 }}
                 </p>
-                <a href="{% url 'en:news_detail' education.id %}" class="btn1"
-                >Batafsil</a
-                >
+                <a href="{% url 'en:news_detail' education.id %}" class="btn1">Read More</a>
             </div>
         </div>
         {% endfor %}
@@ -77,19 +76,9 @@
 <!-- ======================= Modal ======================= -->
 <div class="modal" id="newsModal" role="dialog" aria-hidden="true">
     <div class="modal-content" id="modalContent">
-        <span
-                class="modal-close"
-                onclick="closeModal()"
-                aria-label="Close Modal"
-        >&times;</span
-        >
+        <span class="modal-close" onclick="closeModal()" aria-label="Close Modal">&times;</span>
         <h2 id="modalTitle"></h2>
         <p id="modalText"></p>
-<!--        <div class="social-icons">-->
-<!--            <a href="#"><i class="fab fa-telegram"></i></a>-->
-<!--            <a href="#"><i class="fab fa-instagram"></i></a>-->
-<!--            <a href="#"><i class="fab fa-facebook"></i></a>-->
-<!--        </div>-->
     </div>
 </div>
 
@@ -100,9 +89,9 @@
             <div class="footer-section">
                 <div class="footer-logo">
                     <i class="fas fa-paw"></i>
-                    <span>Vedmedikal</span>
+                    <span>Vetmedical</span>
                 </div>
-                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi.</p>
+                <p>Provides tested, high-quality and reliable foreign premixes and vaccines for poultry health.</p>
                 <div class="social-links">
                     {% for int in internet %}
                     <a href="{{ int.link }}" target="_blank">
@@ -112,25 +101,25 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Tezkor havolalar</h3>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="{% url 'en:about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'en:products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'en:news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'en:gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'en:about' %}">About Us</a></li>
+                    <li><a href="{% url 'en:products' %}">Products</a></li>
+                    <li><a href="{% url 'en:news' %}">News</a></li>
+                    <li><a href="{% url 'en:gallery' %}">Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Mahsulotlar</h3>
+                <h3>Products</h3>
                 <ul>
-                    <li><a href="{% url 'en:products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'en:products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'en:products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'en:products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'en:products' %}">Chicken Vaccine</a></li>
+                    <li><a href="{% url 'en:products' %}">Cat Vaccine</a></li>
+                    <li><a href="{% url 'en:products' %}">Antiparasitic Drugs</a></li>
+                    <li><a href="{% url 'en:products' %}">Vitamins</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Aloqa</h3>
+                <h3>Contact</h3>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -148,7 +137,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vetmedikal. Barcha huquqlar himoyalangan.</p>
+            <p>&copy; 2024 Vetmedical. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -165,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function() {
             hamburger.classList.toggle("active");
         });
 
-        // Menyudan link bosilganda menyuni yopish
         document.querySelectorAll(".nav-link").forEach(link =>
             link.addEventListener("click", () => {
                 navMenu.classList.remove("active");
@@ -187,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("newsModal").style.display = "none";
     }
 
-    // Language dropdown handler (if used in future)
     const dropdownButton = document.getElementById("languageDropdown");
     const languageMenu = document.getElementById("languageMenu");
 
