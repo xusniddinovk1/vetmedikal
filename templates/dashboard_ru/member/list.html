@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container center-content">
     <div style="text-align: right; margin-bottom: 1rem;">
-        <a href="{% url 'ru-admin:member_sozdat' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
+        <a href="{% url 'ru-admin:chleny_komandy_sozdat' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
     </div>
     <div class="table-wrapper">
         <table class="table">
@@ -34,8 +34,8 @@
                 </td>
                 <td class="description">{{ txt.bio|truncatechars:60 }}</td>
                 <td class="actions">
-                    <a href="{% url 'ru-admin:member_redaktirovat' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
-                    <a href="{% url 'ru-admin:member_udalit' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
+                    <a href="{% url 'ru-admin:chleny_komandy_redaktirovat' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'ru-admin:chleny_komandy_udalit' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
             {% empty %}

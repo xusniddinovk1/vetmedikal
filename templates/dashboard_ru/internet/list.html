@@ -27,7 +27,7 @@
                 <td class="link">{{ txt.link|truncatechars:60 }}</td>
 
                 <td class="actions">
-                    <a href="{% url 'ru-admin:internet_izmenit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'ru-admin:internet_redaktirovat' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
                     <a href="{% url 'ru-admin:internet_udalit' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>

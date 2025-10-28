@@ -26,7 +26,7 @@
                 <td class="description">{{ txt.context|truncatechars:60 }}</td>
                 <td class="description">{{ txt.year }}</td>
                 <td class="actions">
-                    <a href="{% url 'ru-admin:istoriya_izmenit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'ru-admin:istoriya_redaktirovat' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
                     <a href="{% url 'ru-admin:istoriya_udalit' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>

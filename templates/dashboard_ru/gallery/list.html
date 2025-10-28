@@ -37,7 +37,7 @@
                 <td class="created">{{ txt.created_at|date:"Y-m-d H:i" }}</td>
 
                 <td class="actions">
-                    <a href="{% url 'ru-admin:galereya_izmenit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'ru-admin:galereya_redaktirovat' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
                     <a href="{% url 'ru-admin:galereya_udalit' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
