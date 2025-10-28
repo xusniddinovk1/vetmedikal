@@ -179,7 +179,7 @@
                         <h3>{{ p.title }}</h3>
                         <p class="product-category">{{ p.category.name }}</p>
                         <div class="product-price">
-                            <span class="current-price">${{ p.price }}</span>
+                            <span class="current-price">{{ p.price }} UZS</span>
                         </div>
                         <a href="{% url 'en:product_detail' p.id %}" class="btn btn-primary">View</a>
                     </div>
