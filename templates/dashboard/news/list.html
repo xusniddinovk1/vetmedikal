@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container center-content">
     <div style="text-align: right; margin-bottom: 1rem;">
-        <a href="{% url 'uz-admin:news_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
+        <a href="{% url 'uz-admin:yangi_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
     </div>
     <div class="table-wrapper">
         <table class="table">
@@ -37,8 +37,8 @@
                 <td class="created">{{ txt.created_at|date:"Y-m-d H:i" }}</td>
 
                 <td class="actions">
-                    <a href="{% url 'uz-admin:news_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
-                    <a href="{% url 'uz-admin:news_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
+                    <a href="{% url 'uz-admin:yangi_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'uz-admin:yangi_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
             {% empty %}

@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container center-content">
     <div style="text-align: right; margin-bottom: 1rem;">
-        <a href="{% url 'uz-admin:feature_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
+        <a href="{% url 'uz-admin:xusus_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
     </div>
     <div class="table-wrapper">
         <table class="table">
@@ -27,8 +27,8 @@
                 <td class="title">{{ txt.title }}</td>
 
                 <td class="actions">
-                    <a href="{% url 'uz-admin:feature_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
-                    <a href="{% url 'uz-admin:feature_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
+                    <a href="{% url 'uz-admin:xusus_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'uz-admin:xusus_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
             {% empty %}

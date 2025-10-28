@@ -18,33 +18,32 @@
     <aside class="sidebar">
     <h2 class="logo">AdminPanel</h2>
     <nav class="nav">
-        <a href="{% url 'uz-admin:home_page' %}" class="nav-link">Dashboard</a>
-        <a href="{% url 'uz-admin:gallery_category_list' %}" class="nav-link">Galeriya kategoriyasi</a>
-        <a href="{% url 'uz-admin:product_category_list' %}" class="nav-link">Mahsulot kategriyasi</a>
-        <a href="{% url 'uz-admin:category_list' %}" class="nav-link">Yangiliklar categoriyasi</a>
-        <a href="{% url 'uz-admin:service_list' %}" class="nav-link">Xizmatlarimiz</a>
-        <a href="{% url 'uz-admin:mission_list' %}" class="nav-link">Biz haqimizda</a>
-        <a href="{% url 'uz-admin:news_list' %}" class="nav-link">Yangiliklar</a>
-        <a href="{% url 'uz-admin:product_list' %}" class="nav-link">Mahsulotlar</a>
-        <a href="{% url 'uz-admin:overview_list' %}" class="nav-link">Ishlab chiqarish</a>
-        <a href="{% url 'uz-admin:stat_list' %}" class="nav-link">Ishlab chiqarish statistika</a>
-        <a href="{% url 'uz-admin:line_list' %}" class="nav-link">Mahsulot liniyalari</a>
-        <a href="{% url 'uz-admin:partner_list' %}" class="nav-link">Hamkorlar</a>
-        <a href="{% url 'uz-admin:benefit_list' %}" class="nav-link">Hamkorlar afzalliklari</a>
-        <a href="{% url 'uz-admin:gallery_list' %}" class="nav-link">Galeriya</a>
-        <a href="{% url 'uz-admin:product_list' %}" class="nav-link">Mahsulotlar</a>
-        <a href="{% url 'uz-admin:feature_list' %}" class="nav-link">Xususiyatlar</a>
-        <a href="{% url 'uz-admin:product_feature_list' %}" class="nav-link">Mahsulotlar xususiyatlari</a>
-        <a href="{% url 'uz-admin:contact_list' %}" class="nav-link">Bog'lanish</a>
-        <a href="{% url 'uz-admin:internet_list' %}" class="nav-link">Ijtimoiy tarmoqlar</a>
-        <a href="{% url 'uz-admin:mission_list' %}" class="nav-link">Missiyalar</a>
-        <a href="{% url 'uz-admin:mission_point_list' %}" class="nav-link">Missiya point</a>
-        <a href="{% url 'uz-admin:statistic_list' %}" class="nav-link">Statistika</a>
-        <a href="{% url 'uz-admin:value_list' %}" class="nav-link">Qadriyatlar</a>
-        <a href="{% url 'uz-admin:achievement_list' %}" class="nav-link">Yutuqlar</a>
-        <a href="{% url 'uz-admin:member_list' %}" class="nav-link">Jamoa a'zolari</a>
-        <a href="{% url 'uz-admin:history_list' %}" class="nav-link">Tarix</a>
-    </nav>
+    <a href="{% url 'uz-admin:home' %}" class="nav-link">Dashboard</a>
+    <a href="{% url 'uz-admin:rasm_tur_list' %}" class="nav-link">Galereya turlari</a>
+    <a href="{% url 'uz-admin:mah_kat_list' %}" class="nav-link">Mahsulot turlari</a>
+    <a href="{% url 'uz-admin:kateg_list' %}" class="nav-link">Yangiliklar kategoriyasi</a>
+    <a href="{% url 'uz-admin:xizmatlar_list' %}" class="nav-link">Xizmatlarimiz</a>
+    <a href="{% url 'uz-admin:missiya_list' %}" class="nav-link">Biz haqimizda</a>
+    <a href="{% url 'uz-admin:yangi_list' %}" class="nav-link">Yangiliklar</a>
+    <a href="{% url 'uz-admin:mahsulot_list' %}" class="nav-link">Mahsulotlar</a>
+    <a href="{% url 'uz-admin:umumiy_list' %}" class="nav-link">Ishlab chiqarish</a>
+    <a href="{% url 'uz-admin:statistika_list' %}" class="nav-link">Ishlab chiqarish statistika</a>
+    <a href="{% url 'uz-admin:qator_list' %}" class="nav-link">Mahsulot liniyalari</a>
+    <a href="{% url 'uz-admin:hamkor_list' %}" class="nav-link">Hamkorlar</a>
+    <a href="{% url 'uz-admin:afzallik_list' %}" class="nav-link">Hamkorlik afzalliklari</a>
+    <a href="{% url 'uz-admin:galereya_list' %}" class="nav-link">Galereya</a>
+    <a href="{% url 'uz-admin:xusus_list' %}" class="nav-link">Xususiyatlar</a>
+    <a href="{% url 'uz-admin:mahsulot_xusus_list' %}" class="nav-link">Mahsulot xususiyatlari</a>
+    <a href="{% url 'uz-admin:kontaktlar_list' %}" class="nav-link">Bog‘lanish</a>
+    <a href="{% url 'uz-admin:tarmoqlar_list' %}" class="nav-link">Ijtimoiy tarmoqlar</a>
+    <a href="{% url 'uz-admin:missiya_punkt_list' %}" class="nav-link">Missiya punktlari</a>
+    <a href="{% url 'uz-admin:statlar_list' %}" class="nav-link">Statistikalar</a>
+    <a href="{% url 'uz-admin:qadriyatlar_list' %}" class="nav-link">Qadriyatlar</a>
+    <a href="{% url 'uz-admin:yutuqlar_list' %}" class="nav-link">Yutuqlar</a>
+    <a href="{% url 'uz-admin:azolar_list' %}" class="nav-link">Jamoa a’zolari</a>
+    <a href="{% url 'uz-admin:tarix_list' %}" class="nav-link">Tarix</a>
+</nav>
+
 </aside>
 
     <!-- Main Content -->
@@ -67,9 +66,9 @@
 
                     <div class="dropdown" id="user-dropdown">
                         <ul class="dropdown-menu">
-                            <li><a href="{% url 'uz-admin:my_profile' %}">My Profile</a></li>
+                            <li><a href="{% url 'uz-admin:mening_profilim' %}">My Profile</a></li>
                             <li><a href="#">Settings</a></li>
-                            <li><a href="{% url 'uz-admin:logout_page' %}">Logout</a></li>
+                            <li><a href="{% url 'uz-admin:logout' %}">Logout</a></li>
                         </ul>
                     </div>
                 </div>

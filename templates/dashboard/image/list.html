@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container center-content">
     <div style="text-align: right; margin-bottom: 1rem;">
-        <a href="{% url 'uz-admin:image_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
+        <a href="{% url 'uz-admin:rasmlar_create' %}" class="btn btn-success">➕ Yangi bo‘lim qo‘shish</a>
     </div>
     <div class="table-wrapper">
         <table class="table">
@@ -31,8 +31,8 @@
                 </td>
 
                 <td class="actions">
-                    <a href="{% url 'uz-admin:image_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
-                    <a href="{% url 'uz-admin:image_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
+                    <a href="{% url 'uz-admin:rasmlar_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
+                    <a href="{% url 'uz-admin:rasmlar_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>
                 </td>
             </tr>
             {% empty %}
