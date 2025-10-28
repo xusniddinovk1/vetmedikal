@@ -93,17 +93,16 @@ body {
 }
 
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    padding: 0;
-    position: relative;
-    background:
-      url("/static/images/fon/main_img.jpeg") center/cover no-repeat;
-    color: white;
-    overflow: hidden;
-    margin-top: 70px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  background: url("/static/images/fon/main_img.jpeg") center/cover no-repeat;
+  color: white;
+  overflow: hidden;
+  margin-top: 70px;
 }
 .hero::before {
   content: "";
@@ -135,6 +134,11 @@ body {
 }
 
 .hero-title {
+ /* border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3); /* shaffof fon */
+  /*backdrop-filter: blur(10px); /* orqa fonni blur qiladi */
+  -webkit-backdrop-filter: blur(10px); /* Safari uchun */
+  color: #fff;
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -143,6 +147,7 @@ body {
 }
 
 .hero-description {
+  color: #fff;
   font-size: 1.3rem;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -206,6 +211,7 @@ body {
 .hero-image {
   display: none;
 }
+
 /* Services Section */
 .services {
   padding: 100px 0;
