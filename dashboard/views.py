@@ -9,7 +9,7 @@ from .forms import *
 
 
 def login_required_decorator(func):
-    return login_required(func, login_url='uz-admin:login_page')
+    return login_required(func, login_url='uz-admin:login')
 
 
 def login_page(request):
@@ -20,7 +20,7 @@ def login_page(request):
         user = authenticate(request, phone_number=phone, password=password)
         if user:
             login(request, user)
-            return redirect('uz-admin:home_page')
+            return redirect('uz-admin:home')
         else:
             return render(request, "dashboard/login.html", {"error": "Incorrect credentials"})
 
@@ -30,7 +30,7 @@ def login_page(request):
 @login_required_decorator
 def logout_page(request):
     logout(request)
-    return redirect('uz-admin:login_page')
+    return redirect('uz-admin:login')
 
 
 @login_required_decorator
@@ -48,7 +48,7 @@ def profile_edit(request):
         form = ProfileForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('uz-admin:my_profile')
+            return redirect('uz-admin:mening_profilim')
     else:
         form = ProfileForm(instance=user)
 
@@ -146,7 +146,7 @@ def service_create(request):
     form = ServiceForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:service_list")
+        return redirect("uz-admin:xizmatlar_list")
     return render(request, "dashboard/service/form.html", {"form": form})
 
 
@@ -155,14 +155,14 @@ def service_edit(request, id):
     form = ServiceForm(request.POST or None, request.FILES or None, instance=service)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:service_list")
+        return redirect("uz-admin:xizmatlar_list")
     return render(request, "dashboard/service/form.html", {"form": form, "service": service})
 
 
 def service_delete(request, id):
     service = get_object_or_404(Service, id=id)
     service.delete()
-    return redirect("uz-admin:service_list")
+    return redirect("uz-admin:xizmatlar_list")
 
 
 # ==============================
@@ -177,7 +177,7 @@ def feature_create(request):
     form = FeatureForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:feature_list")
+        return redirect("uz-admin:xusus_list")
     return render(request, "dashboard/feature/form.html", {"form": form})
 
 
@@ -186,14 +186,14 @@ def feature_edit(request, id):
     form = FeatureForm(request.POST or None, request.FILES or None, instance=feature)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:feature_list")
+        return redirect("uz-admin:xusus_list")
     return render(request, "dashboard/feature/form.html", {"form": form, "feature": feature})
 
 
 def feature_delete(request, id):
     feature = get_object_or_404(Feature, id=id)
     feature.delete()
-    return redirect("uz-admin:feature_list")
+    return redirect("uz-admin:xusus_list")
 
 
 # ==============================
@@ -208,7 +208,7 @@ def contact_create(request):
     form = ContactForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:contact_list")
+        return redirect("uz-admin:kontaktlar_list")
     return render(request, "dashboard/contact/form.html", {"form": form})
 
 
@@ -217,14 +217,14 @@ def contact_edit(request, id):
     form = ContactForm(request.POST or None, instance=contact)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:contact_list")
+        return redirect("uz-admin:kontaktlar_list")
     return render(request, "dashboard/contact/form.html", {"form": form, "contact": contact})
 
 
 def contact_delete(request, id):
     contact = get_object_or_404(Contact, id=id)
     contact.delete()
-    return redirect("uz-admin:contact_list")
+    return redirect("uz-admin:kontaktlar_list")
 
 
 # ==============================
@@ -239,7 +239,7 @@ def internet_create(request):
     form = InternetForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:internet_list")
+        return redirect("uz-admin:tarmoqlar_list")
     return render(request, "dashboard/internet/form.html", {"form": form})
 
 
@@ -248,14 +248,14 @@ def internet_edit(request, id):
     form = InternetForm(request.POST or None, instance=item)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:internet_list")
+        return redirect("uz-admin:tarmoqlar_list")
     return render(request, "dashboard/internet/form.html", {"form": form, "item": item})
 
 
 def internet_delete(request, id):
     item = get_object_or_404(Internet, id=id)
     item.delete()
-    return redirect("uz-admin:internet_list")
+    return redirect("uz-admin:tarmoqlar_list")
 
 
 # ==============================
@@ -270,7 +270,7 @@ def mission_create(request):
     form = MissionForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:mission_list")
+        return redirect("uz-admin:missiya_list")
     return render(request, "dashboard/mission/form.html", {"form": form})
 
 
@@ -279,14 +279,14 @@ def mission_edit(request, id):
     form = MissionForm(request.POST or None, request.FILES or None, instance=mission)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:mission_list")
+        return redirect("uz-admin:missiya_list")
     return render(request, "dashboard/mission/form.html", {"form": form, "mission": mission})
 
 
 def mission_delete(request, id):
     mission = get_object_or_404(Mission, id=id)
     mission.delete()
-    return redirect("uz-admin:mission_list")
+    return redirect("uz-admin:missiya_list")
 
 
 # ==============================
@@ -301,7 +301,7 @@ def mission_point_create(request):
     form = MissionPointForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:mission_point_list")
+        return redirect("uz-admin:missiya_punkt_list")
     return render(request, "dashboard/mission_point/form.html", {"form": form})
 
 
@@ -310,14 +310,14 @@ def mission_point_edit(request, id):
     form = MissionPointForm(request.POST or None, instance=point)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:mission_point_list")
+        return redirect("uz-admin:missiya_punkt_list")
     return render(request, "dashboard/mission_point/form.html", {"form": form, "point": point})
 
 
 def mission_point_delete(request, id):
     point = get_object_or_404(MissionPoint, id=id)
     point.delete()
-    return redirect("uz-admin:mission_point_list")
+    return redirect("uz-admin:missiya_punkt_list")
 
 
 # ==============================
@@ -332,7 +332,7 @@ def statistic_create(request):
     form = StatisticForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:statistic_list")
+        return redirect("uz-admin:statlar_list")
     return render(request, "dashboard/statistic/form.html", {"form": form})
 
 
@@ -341,14 +341,14 @@ def statistic_edit(request, id):
     form = StatisticForm(request.POST or None, instance=stat)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:statistic_list")
+        return redirect("uz-admin:statlar_list")
     return render(request, "dashboard/statistic/form.html", {"form": form, "stat": stat})
 
 
 def statistic_delete(request, id):
     stat = get_object_or_404(Statistic, id=id)
     stat.delete()
-    return redirect("uz-admin:statistic_list")
+    return redirect("uz-admin:statlar_list")
 
 
 # ==============================
@@ -363,7 +363,7 @@ def value_create(request):
     form = ValueForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:value_list")
+        return redirect("uz-admin:qadriyatlar_list")
     return render(request, "dashboard/value/form.html", {"form": form})
 
 
@@ -372,14 +372,14 @@ def value_edit(request, id):
     form = ValueForm(request.POST or None, instance=value)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:value_list")
+        return redirect("uz-admin:qadriyatlar_list")
     return render(request, "dashboard/value/form.html", {"form": form, "value": value})
 
 
 def value_delete(request, id):
     value = get_object_or_404(Value, id=id)
     value.delete()
-    return redirect("uz-admin:value_list")
+    return redirect("uz-admin:qadriyatlar_list")
 
 
 # ==============================
@@ -394,7 +394,7 @@ def achievement_create(request):
     form = AchievementForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:achievement_list")
+        return redirect("uz-admin:yutuqlar_list")
     return render(request, "dashboard/achievement/form.html", {"form": form})
 
 
@@ -403,14 +403,14 @@ def achievement_edit(request, id):
     form = AchievementForm(request.POST or None, instance=achievement)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:achievement_list")
+        return redirect("uz-admin:yutuqlar_list")
     return render(request, "dashboard/achievement/form.html", {"form": form, "achievement": achievement})
 
 
 def achievement_delete(request, id):
     achievement = get_object_or_404(Achievement, id=id)
     achievement.delete()
-    return redirect("uz-admin:achievement_list")
+    return redirect("uz-admin:yutuqlar_list")
 
 
 # ==============================
@@ -425,7 +425,7 @@ def member_create(request):
     form = MemberForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:member_list")
+        return redirect("uz-admin:azolar_list")
     return render(request, "dashboard/member/form.html", {"form": form})
 
 
@@ -434,14 +434,14 @@ def member_edit(request, id):
     form = MemberForm(request.POST or None, request.FILES or None, instance=member)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:member_list")
+        return redirect("uz-admin:azolar_list")
     return render(request, "dashboard/member/form.html", {"form": form, "member": member})
 
 
 def member_delete(request, id):
     member = get_object_or_404(Member, id=id)
     member.delete()
-    return redirect("uz-admin:member_list")
+    return redirect("uz-admin:azolar_list")
 
 
 # ==============================
@@ -456,7 +456,7 @@ def history_create(request):
     form = HistoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:history_list")
+        return redirect("uz-admin:tarix_list")
     return render(request, "dashboard/history/form.html", {"form": form})
 
 
@@ -465,14 +465,14 @@ def history_edit(request, id):
     form = HistoryForm(request.POST or None, instance=history)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:history_list")
+        return redirect("uz-admin:tarix_list")
     return render(request, "dashboard/history/form.html", {"form": form, "history": history})
 
 
 def history_delete(request, id):
     history = get_object_or_404(History, id=id)
     history.delete()
-    return redirect("uz-admin:history_list")
+    return redirect("uz-admin:tarix_list")
 
 
 # ---------------- MANUFACTURING OVERVIEW ----------------
@@ -485,7 +485,7 @@ def manufacturing_overview_create(request):
     form = ManufacturingOverviewForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:overview_list')
+        return redirect('uz-admin:umumiy_list')
     return render(request, 'dashboard/overview/form.html', {'form': form})
 
 
@@ -494,14 +494,14 @@ def manufacturing_overview_edit(request, id):
     form = ManufacturingOverviewForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:overview_list')
+        return redirect('uz-admin:umumiy_list')
     return render(request, 'dashboard/overview/form.html', {'form': form, 'object': obj})
 
 
 def manufacturing_overview_delete(request, id):
     obj = get_object_or_404(ManufacturingOverview, id=id)
     obj.delete()
-    return redirect('uz-admin:overview_list')
+    return redirect('uz-admin:umumiy_list')
 
 
 # ---------------- MANUFACTURING STAT ----------------
@@ -514,7 +514,7 @@ def manufacturing_stat_create(request):
     form = ManufacturingStatForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:stat_list')
+        return redirect('uz-admin:statistika_list')
     return render(request, 'dashboard/stat/form.html', {'form': form})
 
 
@@ -523,14 +523,14 @@ def manufacturing_stat_edit(request, id):
     form = ManufacturingStatForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:stat_list')
+        return redirect('uz-admin:statistika_list')
     return render(request, 'dashboard/stat/form.html', {'form': form, 'object': obj})
 
 
 def manufacturing_stat_delete(request, id):
     obj = get_object_or_404(ManufacturingStat, id=id)
     obj.delete()
-    return redirect('uz-admin:stat_list')
+    return redirect('uz-admin:statistika_list')
 
 
 # ---------------- PRODUCTION LINE ----------------
@@ -543,7 +543,7 @@ def production_line_create(request):
     form = ProductionLineForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:line_list')
+        return redirect('uz-admin:qator_list')
     return render(request, 'dashboard/line/form.html', {'form': form})
 
 
@@ -552,7 +552,7 @@ def production_line_edit(request, id):
     form = ProductionLineForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:line_list')
+        return redirect('uz-admin:qator_list')
     return render(request, 'dashboard/line/form.html', {'form': form, 'object': obj})
 
 
@@ -572,7 +572,7 @@ def partner_create(request):
     form = PartnerForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:partner_list')
+        return redirect('uz-admin:hamkor_list')
     return render(request, 'dashboard/partner/form.html', {'form': form})
 
 
@@ -581,7 +581,7 @@ def partner_edit(request, id):
     form = PartnerForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:partner_list')
+        return redirect('uz-admin:hamkor_list')
     return render(request, 'dashboard/partner/form.html', {'form': form, 'object': obj})
 
 
@@ -601,7 +601,7 @@ def partnership_benefit_create(request):
     form = PartnershipBenefitForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:benefit_list')
+        return redirect('uz-admin:afzallik_list')
     return render(request, 'dashboard/benefit/form.html', {'form': form})
 
 
@@ -610,14 +610,14 @@ def partnership_benefit_edit(request, id):
     form = PartnershipBenefitForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:benefit_list')
+        return redirect('uz-admin:afzallik_list')
     return render(request, 'dashboard/benefit/form.html', {'form': form, 'object': obj})
 
 
 def partnership_benefit_delete(request, id):
     obj = get_object_or_404(PartnershipBenefit, id=id)
     obj.delete()
-    return redirect('uz-admin:benefit_list')
+    return redirect('uz-admin:afzallik_list')
 
 
 # ---------------- GALLERY CATEGORY ----------------
@@ -630,7 +630,7 @@ def gallery_category_create(request):
     form = GalleryCategoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:gallery_category_list')
+        return redirect('uz-admin:rasm_tur_list')
     return render(request, 'dashboard/gallery_category/form.html', {'form': form})
 
 
@@ -639,14 +639,14 @@ def gallery_category_edit(request, id):
     form = GalleryCategoryForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:gallery_category_list')
+        return redirect('uz-admin:rasm_tur_list')
     return render(request, 'dashboard/gallery_category/form.html', {'form': form, 'object': obj})
 
 
 def gallery_category_delete(request, id):
     obj = get_object_or_404(GalleryCategory, id=id)
     obj.delete()
-    return redirect('uz-admin:gallery_category_list')
+    return redirect('uz-admin:rasm_tur_list')
 
 
 # ---------------- GALLERY ----------------
@@ -659,7 +659,7 @@ def gallery_create(request):
     form = GalleryForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:gallery_list')
+        return redirect('uz-admin:galereya_list')
     return render(request, 'dashboard/gallery/form.html', {'form': form})
 
 
@@ -668,14 +668,14 @@ def gallery_edit(request, id):
     form = GalleryForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:gallery_list')
+        return redirect('uz-admin:galereya_list')
     return render(request, 'dashboard/gallery/form.html', {'form': form, 'object': obj})
 
 
 def gallery_delete(request, id):
     obj = get_object_or_404(Gallery, id=id)
     obj.delete()
-    return redirect('uz-admin:gallery_list')
+    return redirect('uz-admin:galereya_list')
 
 
 # ---------------- CATEGORY ----------------
@@ -688,7 +688,7 @@ def category_create(request):
     form = CategoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:category_list')
+        return redirect('uz-admin:kateg_list')
     return render(request, 'dashboard/category/form.html', {'form': form})
 
 
@@ -697,14 +697,14 @@ def category_edit(request, id):
     form = CategoryForm(request.POST or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:category_list')
+        return redirect('uz-admin:kateg_list')
     return render(request, 'dashboard/category/form.html', {'form': form, 'object': obj})
 
 
 def category_delete(request, id):
     obj = get_object_or_404(Category, id=id)
     obj.delete()
-    return redirect('uz-admin:category_list')
+    return redirect('uz-admin:kateg_list')
 
 
 # ---------------- NEWS ----------------
@@ -717,7 +717,7 @@ def news_create(request):
     form = NewsForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:news_list')
+        return redirect('uz-admin:yangi_list')
     return render(request, 'dashboard/news/form.html', {'form': form})
 
 
@@ -726,14 +726,14 @@ def news_edit(request, id):
     form = NewsForm(request.POST or None, request.FILES or None, instance=obj)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('uz-admin:news_list')
+        return redirect('uz-admin:yangi_list')
     return render(request, 'dashboard/news/form.html', {'form': form, 'object': obj})
 
 
 def news_delete(request, id):
     obj = get_object_or_404(News, id=id)
     obj.delete()
-    return redirect('uz-admin:news_list')
+    return redirect('uz-admin:yangi_list')
 
 
 def product_category_list(request):
@@ -745,7 +745,7 @@ def product_category_create(request):
     form = ProductCategoryForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:product_category_list")
+        return redirect("uz-admin:mah_kat_list")
     return render(request, "dashboard/category/form.html", {"form": form})
 
 
@@ -754,14 +754,14 @@ def product_category_edit(request, id):
     form = ProductCategoryForm(request.POST or None, instance=category)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:product_category_list")
+        return redirect("uz-admin:mah_kat_list")
     return render(request, "dashboard/category/form.html", {"form": form, "category": category})
 
 
 def product_category_delete(request, id):
     category = get_object_or_404(ProductCategory, id=id)
     category.delete()
-    return redirect("uz-admin:product_category_list")
+    return redirect("uz-admin:mah_kat_list")
 
 
 # ==============================
@@ -776,7 +776,7 @@ def product_create(request):
     form = ProductForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:product_list")
+        return redirect("uz-admin:mahsulot_list")
     return render(request, "dashboard/product/form.html", {"form": form})
 
 
@@ -785,14 +785,14 @@ def product_edit(request, id):
     form = ProductForm(request.POST or None, request.FILES or None, instance=product)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:product_list")
+        return redirect("uz-admin:mahsulot_list")
     return render(request, "dashboard/product/form.html", {"form": form, "product": product})
 
 
 def product_delete(request, id):
     product = get_object_or_404(Product, id=id)
     product.delete()
-    return redirect("uz-admin:product_list")
+    return redirect("uz-admin:mahsulot_list")
 
 
 # ==============================
@@ -807,7 +807,7 @@ def product_feature_create(request):
     form = ProductFeatureForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:product_feature_list")
+        return redirect("uz-admin:mahsulot_xusus_list")
     return render(request, "dashboard/product_feature/form.html", {"form": form})
 
 
@@ -816,14 +816,14 @@ def product_feature_edit(request, id):
     form = ProductFeatureForm(request.POST or None, instance=feature)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:product_feature_list")
+        return redirect("uz-admin:mahsulot_xusus_list")
     return render(request, "dashboard/product_feature/form.html", {"form": form, "feature": feature})
 
 
 def product_feature_delete(request, id):
     feature = get_object_or_404(ProductFeature, id=id)
     feature.delete()
-    return redirect("uz-admin:product_feature_list")
+    return redirect("uz-admin:mahsulot_xusus_list")
 
 
 # ==============================
@@ -838,7 +838,7 @@ def image_create(request):
     form = ProductImageForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:image_list")
+        return redirect("uz-admin:rasmlar_list")
     return render(request, "dashboard/image/form.html", {"form": form})
 
 
@@ -847,11 +847,11 @@ def image_edit(request, id):
     form = ProductImageForm(request.POST or None, request.FILES or None, instance=image)
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect("uz-admin:image_list")
+        return redirect("uz-admin:rasmlar_list")
     return render(request, "dashboard/image/form.html", {"form": form, "image": image})
 
 
 def image_delete(request, id):
     image = get_object_or_404(ProductImage, id=id)
     image.delete()
-    return redirect("uz-admin:image_list")
+    return redirect("uz-admin:rasmlar_list")

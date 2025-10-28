@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from dashboard import views
 from django.contrib.auth.views import PasswordChangeDoneView
 
 app_name = 'dashboard'
