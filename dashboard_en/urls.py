@@ -22,7 +22,7 @@ urlpatterns = [
     path('overview/<int:id>/delete/', views.manufacturing_overview_delete1, name='overview_delete1'),
 
     path('stat/', views.manufacturing_stat_list1, name='stat_list1'),
-    path('stat/create/', views.manufacturing_stat_create1, name='stat_create'),
+    path('stat/create/', views.manufacturing_stat_create1, name='stat_create1'),
     path('stat/<int:id>/edit/', views.manufacturing_stat_edit1, name='stat_edit1'),
     path('stat/<int:id>/delete/', views.manufacturing_stat_delete1, name='stat_delete1'),
 
@@ -63,7 +63,7 @@ urlpatterns = [
 
     path("categories/", views.product_category_list1, name="product_category_list1"),
     path("categories/create/", views.product_category_create1, name="product_category_create1"),
-    path("categories/<int:id>/edit/", views.product_category_edit1, name="product_category_edit"),
+    path("categories/<int:id>/edit/", views.product_category_edit1, name="product_category_edit1"),
     path("categories/<int:id>/delete/", views.product_category_delete1, name="product_category_delete1"),
 
     path("products/", views.product_list1, name="product_list1"),
