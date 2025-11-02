@@ -20,7 +20,7 @@ class Feature(models.Model):
 
 
 class Contact(models.Model):
-    address = models.CharField(max_length=255)
+    address = models.CharField(max_length=255, blank=True)
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
 

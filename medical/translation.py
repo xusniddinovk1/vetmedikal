@@ -105,3 +105,7 @@ class ProductTranslationOptions(TranslationOptions):
 @register(ProductFeature)
 class ProductFeatureTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
+
+@register(Contact)
+class ContactTranslationOptions(TranslationOptions):
+    fields = ('address', )
