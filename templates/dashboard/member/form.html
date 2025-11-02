@@ -5,19 +5,37 @@
 {% with show_userbar=False %}
 {% block content %}
 <div class="form-container">
-    <h2 class="form-title">Lessons</h2>  <!-- Qo‘shilgan sarlavha -->
+    <h2 class="form-title">Jamoa</h2>  <!-- Qo‘shilgan sarlavha -->
     <form method="post" enctype="multipart/form-data" class="styled-form">
         {% csrf_token %}
         {{ form.non_field_errors }}
 
         <div class="form-group">
-            <label for="{{ form.title.id_for_label }}">To'liq ismi</label>
-            {{ form.name }}
+            <label for="{{ form.title.id_for_label }}">To'liq ismi(uz)</label>
+            {{ form.name_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.title.id_for_label }}">To'liq ismi(ru)</label>
+            {{ form.name_ru }}
         </div>
 
         <div class="form-group">
-            <label for="{{ form.description.id_for_label }}">Lavozimi</label>
-            {{ form.position }}
+            <label for="{{ form.title.id_for_label }}">To'liq ismi(en)</label>
+            {{ form.name_en }}
+        </div>
+
+
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Lavozimi(uz)</label>
+            {{ form.position_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Lavozimi(ru)</label>
+            {{ form.position_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Lavozimi(en)</label>
+            {{ form.position_en }}
         </div>
 
         <div class="form-group">
@@ -25,8 +43,16 @@
             {{ form.image }}
         </div>
         <div class="form-group">
-            <label for="{{ form.description.id_for_label }}">Avtobiografiya</label>
-            {{ form.bio }}
+            <label for="{{ form.description.id_for_label }}">Avtobiografiya(uz)</label>
+            {{ form.bio_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Avtobiografiya(ru)</label>
+            {{ form.bio_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Avtobiografiya(en)</label>
+            {{ form.bio_en }}
         </div>
         <div class="form-buttons">
             <button type="submit" class="submit-btn">💾 Saqlash</button>

@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-02 15:29+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\config\settings.py:95
+msgid "Uzbek"
+msgstr ""
+
+#: .\config\settings.py:96
+msgid "Russian"
+msgstr ""
+
+#: .\config\settings.py:97
+msgid "English"
+msgstr ""
+
+#: .\templates\medical\about.html:9
+msgid "Biz haqimizda - Vetmedikal "
+msgstr "About Us - Vetmedikal"
+
+#: .\templates\medical\about.html:40 .\templates\medical\gallery.html:40
+#: .\templates\medical\index.html:60 .\templates\medical\manufacturing.html:40
+#: .\templates\medical\news.html:40 .\templates\medical\partners.html:40
+#: .\templates\medical\product_detail.html:40
+#: .\templates\medical\product_detail.html:74
+#: .\templates\medical\products.html:40
+msgid "Bosh sahifa"
+msgstr "Home"
+
+#: .\templates\medical\about.html:43 .\templates\medical\about.html:219
+#: .\templates\medical\gallery.html:43 .\templates\medical\gallery.html:120
+#: .\templates\medical\index.html:63 .\templates\medical\index.html:97
+#: .\templates\medical\index.html:188 .\templates\medical\manufacturing.html:43
+#: .\templates\medical\manufacturing.html:134 .\templates\medical\news.html:43
+#: .\templates\medical\news.html:130 .\templates\medical\news_detail.html:67
+#: .\templates\medical\partners.html:43 .\templates\medical\partners.html:134
+#: .\templates\medical\product_detail.html:43
+#: .\templates\medical\product_detail.html:227
+#: .\templates\medical\products.html:43 .\templates\medical\products.html:151
+msgid "Biz haqimizda"
+msgstr "About Us"
+
+#: .\templates\medical\about.html:46 .\templates\medical\about.html:220
+#: .\templates\medical\about.html:226 .\templates\medical\gallery.html:46
+#: .\templates\medical\gallery.html:121 .\templates\medical\gallery.html:127
+#: .\templates\medical\index.html:66 .\templates\medical\index.html:162
+#: .\templates\medical\index.html:189 .\templates\medical\index.html:195
+#: .\templates\medical\manufacturing.html:46
+#: .\templates\medical\manufacturing.html:135
+#: .\templates\medical\manufacturing.html:141 .\templates\medical\news.html:46
+#: .\templates\medical\news.html:131 .\templates\medical\news.html:137
+#: .\templates\medical\news_detail.html:68
+#: .\templates\medical\news_detail.html:74 .\templates\medical\partners.html:46
+#: .\templates\medical\partners.html:135 .\templates\medical\partners.html:141
+#: .\templates\medical\product_detail.html:46
+#: .\templates\medical\product_detail.html:76
+#: .\templates\medical\product_detail.html:228
+#: .\templates\medical\product_detail.html:234
+#: .\templates\medical\products.html:46 .\templates\medical\products.html:152
+#: .\templates\medical\products.html:158
+msgid "Mahsulotlar"
+msgstr "Products"
+
+#: .\templates\medical\about.html:49 .\templates\medical\gallery.html:49
+#: .\templates\medical\index.html:69 .\templates\medical\manufacturing.html:49
+#: .\templates\medical\news.html:49 .\templates\medical\partners.html:49
+#: .\templates\medical\product_detail.html:49
+#: .\templates\medical\products.html:49
+msgid "Fermadagi natijalar"
+msgstr "Farm Results"
+
+#: .\templates\medical\about.html:52 .\templates\medical\gallery.html:52
+#: .\templates\medical\index.html:72 .\templates\medical\manufacturing.html:52
+#: .\templates\medical\news.html:52 .\templates\medical\partners.html:52
+#: .\templates\medical\product_detail.html:52
+#: .\templates\medical\products.html:52
+msgid "Hamkorlar"
+msgstr "Partners"
+
+#: .\templates\medical\about.html:55 .\templates\medical\about.html:221
+#: .\templates\medical\gallery.html:55 .\templates\medical\gallery.html:122
+#: .\templates\medical\index.html:75 .\templates\medical\index.html:190
+#: .\templates\medical\manufacturing.html:55
+#: .\templates\medical\manufacturing.html:136 .\templates\medical\news.html:55
+#: .\templates\medical\news.html:132 .\templates\medical\news_detail.html:69
+#: .\templates\medical\partners.html:55 .\templates\medical\partners.html:136
+#: .\templates\medical\product_detail.html:55
+#: .\templates\medical\product_detail.html:229
+#: .\templates\medical\products.html:55 .\templates\medical\products.html:153
+msgid "Yangiliklar"
+msgstr "News"
+
+#: .\templates\medical\about.html:58 .\templates\medical\about.html:222
+#: .\templates\medical\gallery.html:58 .\templates\medical\gallery.html:123
+#: .\templates\medical\index.html:78 .\templates\medical\index.html:191
+#: .\templates\medical\manufacturing.html:58
+#: .\templates\medical\manufacturing.html:137 .\templates\medical\news.html:58
+#: .\templates\medical\news.html:133 .\templates\medical\news_detail.html:70
+#: .\templates\medical\partners.html:58 .\templates\medical\partners.html:137
+#: .\templates\medical\product_detail.html:58
+#: .\templates\medical\product_detail.html:230
+#: .\templates\medical\products.html:58 .\templates\medical\products.html:154
+msgid "Galereya"
+msgstr "Gallery"
+
+#: .\templates\medical\about.html:114
+msgid "Bizning qadriyatlarimiz "
+msgstr "Our Values"
+
+#: .\templates\medical\about.html:115
+msgid "Kompaniyamizning asosiy tamoyillari va qadriyatlari"
+msgstr "Our company's core principles and values"
+
+#: .\templates\medical\about.html:135
+msgid "Bizning yutuqlarimiz"
+msgstr "Our Achievements"
+
+#: .\templates\medical\about.html:136
+#, fuzzy
+#| msgid "Vetmedikal kompaniyasining erishgan muvaffaqiyatlari"
+msgid "Vedmedikal kompaniyasining erishgan muvaffaqiyatlari"
+msgstr "The achievements of Vetmedikal company"
+
+#: .\templates\medical\about.html:157
+msgid "Bizning jamoamiz"
+msgstr "Our Team"
+
+#: .\templates\medical\about.html:158
+msgid "Tajribali mutaxassislar"
+msgstr "Experienced Specialists"
+
+#: .\templates\medical\about.html:181
+msgid "Bizning tariximiz"
+msgstr "Our History"
+
+#: .\templates\medical\about.html:182
+msgid "Vetmedikal kompaniyasining rivojlanish bosqichlari"
+msgstr "Development stages of Vetmedikal company"
+
+#: .\templates\medical\about.html:207 .\templates\medical\gallery.html:108
+#: .\templates\medical\index.html:176
+#: .\templates\medical\manufacturing.html:122 .\templates\medical\news.html:118
+#: .\templates\medical\news_detail.html:55
+#: .\templates\medical\partners.html:122
+#: .\templates\medical\product_detail.html:215
+#: .\templates\medical\products.html:139
+msgid ""
+"Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli "
+"xorijiy premiks va vaksinalarni taqdim etadi"
+msgstr ""
+"Provides tested, high-quality, and reliable foreign premixes and vaccines "
+"for poultry health"
+
+#: .\templates\medical\about.html:217 .\templates\medical\gallery.html:118
+#: .\templates\medical\index.html:186
+#: .\templates\medical\manufacturing.html:132 .\templates\medical\news.html:128
+#: .\templates\medical\news_detail.html:65
+#: .\templates\medical\partners.html:132
+#: .\templates\medical\product_detail.html:225
+#: .\templates\medical\products.html:149
+msgid "Tezkor havolalar"
+msgstr "Quick Links"
+
+#: .\templates\medical\about.html:228 .\templates\medical\gallery.html:129
+#: .\templates\medical\index.html:197
+#: .\templates\medical\manufacturing.html:143 .\templates\medical\news.html:139
+#: .\templates\medical\news_detail.html:76
+#: .\templates\medical\partners.html:143
+#: .\templates\medical\product_detail.html:236
+#: .\templates\medical\products.html:160
+msgid "Vaksinalar"
+msgstr "Vaccines"
+
+#: .\templates\medical\about.html:229 .\templates\medical\gallery.html:130
+#: .\templates\medical\index.html:198
+#: .\templates\medical\manufacturing.html:144 .\templates\medical\news.html:140
+#: .\templates\medical\news_detail.html:77
+#: .\templates\medical\partners.html:144
+#: .\templates\medical\product_detail.html:237
+#: .\templates\medical\products.html:161
+msgid "Premikslar"
+msgstr "Premixes"
+
+#: .\templates\medical\about.html:230 .\templates\medical\gallery.html:131
+#: .\templates\medical\index.html:199
+#: .\templates\medical\manufacturing.html:145 .\templates\medical\news.html:141
+#: .\templates\medical\news_detail.html:78
+#: .\templates\medical\partners.html:145
+#: .\templates\medical\product_detail.html:238
+#: .\templates\medical\products.html:162
+msgid "Veterinar preparatlari"
+msgstr "Veterinary Drugs"
+
+#: .\templates\medical\about.html:232 .\templates\medical\gallery.html:133
+#: .\templates\medical\index.html:201
+#: .\templates\medical\manufacturing.html:147 .\templates\medical\news.html:143
+#: .\templates\medical\news_detail.html:80
+#: .\templates\medical\partners.html:147
+#: .\templates\medical\product_detail.html:240
+#: .\templates\medical\products.html:164
+msgid "Veterinar uskunalari"
+msgstr "Veterinary Equipment"
+
+#: .\templates\medical\about.html:237 .\templates\medical\gallery.html:138
+#: .\templates\medical\index.html:206
+#: .\templates\medical\manufacturing.html:152 .\templates\medical\news.html:148
+#: .\templates\medical\news_detail.html:85
+#: .\templates\medical\partners.html:152
+#: .\templates\medical\product_detail.html:245
+#: .\templates\medical\products.html:169
+msgid "Aloqa"
+msgstr "Contact"
+
+#: .\templates\medical\about.html:255 .\templates\medical\gallery.html:156
+#: .\templates\medical\index.html:224
+#: .\templates\medical\manufacturing.html:170 .\templates\medical\news.html:166
+#: .\templates\medical\news_detail.html:103
+#: .\templates\medical\partners.html:170
+#: .\templates\medical\product_detail.html:263
+#: .\templates\medical\products.html:187
+msgid "Vetmedikal. Barcha huquqlar himoyalangan"
+msgstr "Vetmedikal. All rights reserved"
+
+#: .\templates\medical\gallery.html:9
+msgid "Galereya - Vetmedikal"
+msgstr "Gallery - Vetmedikal"
+
+#: .\templates\medical\gallery.html:73 .\templates\medical\products.html:73
+msgid "Barchasi"
+msgstr "All"
+
+#: .\templates\medical\index.html:9 .\templates\medical\news_detail.html:9
+msgid "Vetmedikal - Uy hayvonlari uchun vaksinalar va dori-darmonlar"
+msgstr "Vetmedikal - Vaccines and Medicines for Pets"
+
+#: .\templates\medical\index.html:93
+msgid "Parrandalar uchun sifatli premikslar va vaksinalar"
+msgstr "High-quality premixes and vaccines for poultry"
+
+#: .\templates\medical\index.html:94
+msgid ""
+" Vetmedikal - parrandachilik uchun eng sifatli va ishonchli chet el "
+"mahsulotlarini taklif etuvchi kompaniya.Bizning premiks va vaksinalar "
+"xalqaro standartlarga javob beradi, samaradorligi esa amaliyotda isbotlangan."
+msgstr ""
+"Vetmedikal is a company offering the highest quality and most reliable "
+"foreign products for poultry farming. Our premixes and vaccines meet "
+"international standards, and their effectiveness has been proven in practice."
+
+#: .\templates\medical\index.html:96
+msgid "Mahsulotlarimiz"
+msgstr "Our Products"
+
+#: .\templates\medical\index.html:106
+msgid "Xizmatlarimiz"
+msgstr "Our Services"
+
+#: .\templates\medical\index.html:107
+msgid ""
+"Bizning asosiy yo'nalishimiz - chetdan olib kelingan, sifat va samaradorligi "
+"isbotlangan vaksina hamda premikslarni yetkazib berish"
+msgstr ""
+"Our main focus is delivering imported vaccines and premixes that are proven "
+"in quality and effectiveness."
+
+#: .\templates\medical\index.html:129
+msgid "Nima uchun tovuq fermalari bizni tanlaydi?"
+msgstr "Why do poultry farms choose us?"
+
+#: .\templates\medical\index.html:144
+msgid "Veterinar klinika"
+msgstr "Veterinary Clinic"
+
+#: .\templates\medical\index.html:155
+msgid "Parrandalar salomatligi va rivojlanishi uchun ishonchli yechim bizda"
+msgstr "We provide reliable solutions for poultry health and growth"
+
+#: .\templates\medical\index.html:156
+msgid "Sifatli premiks va vaksinalar uchun bizga murojaat qiling"
+msgstr "Contact us for high-quality premixes and vaccines"
+
+#: .\templates\medical\index.html:160
+msgid "Qo‘ng‘iroq qilish"
+msgstr "Call Now"
+
+#: .\templates\medical\manufacturing.html:9
+msgid "Ishlab chiqarish - Vetmedical"
+msgstr "Manufacturing - Vetmedikal"
+
+#: .\templates\medical\manufacturing.html:97
+msgid "Mahsulotlar - avval bizning fermamizda sinovdan o‘tadi"
+msgstr "Products are first tested on our own farm"
+
+#: .\templates\medical\manufacturing.html:98
+msgid ""
+"Har bir premiks va vaksina — o‘z fermamizdagi yuqori natijalar bilan "
+"tasdiqlangan"
+msgstr "Each premix and vaccine is verified by high results on our own farm"
+
+#: .\templates\medical\news.html:9
+msgid "Yangiliklar - Vetmedikal"
+msgstr "News - Vetmedikal"
+
+#: .\templates\medical\news.html:83
+
+msgid "Batafsil"
+msgstr "More details"
+
+#: .\templates\medical\partners.html:9
+msgid "Hamkorlar - Vetmedikal"
+msgstr "Partners - Vetmedikal"
+
+#: .\templates\medical\partners.html:73
+msgid " Bizning chet ellik hamkorlarimiz "
+msgstr "Our international partners"
+
+#: .\templates\medical\partners.html:74
+msgid " mamlakatda ishonchli hamkorlar bilan birga ishlaymiz"
+msgstr "We work with reliable partners across the country"
+
+#: .\templates\medical\partners.html:85
+msgid "Saytga o‘tish"
+msgstr "Visit Website"
+
+#: .\templates\medical\partners.html:97
+msgid "Hamkorlik afzalliklari"
+msgstr "Partnership Advantages"
+
+#: .\templates\medical\partners.html:98
+msgid "Hamkorlarimiz taqdim etadigan imkoniyatlar"
+msgstr "Opportunities offered by our partners"
+
+#: .\templates\medical\product_detail.html:9
+msgid "Mahsulot tafsilotlari - Vetmedikal"
+msgstr "Product Details - Vetmedikal"
+
+#: .\templates\medical\product_detail.html:116
+msgid "Ishlab chiqaruvchi davlat"
+msgstr "Country of Origin"
+
+#: .\templates\medical\product_detail.html:140
+msgid "so'm"
+msgstr "UZS"
+
+#: .\templates\medical\product_detail.html:146
+msgid "Ta'rif"
+msgstr "Description"
+
+#: .\templates\medical\product_detail.html:147
+#: .\templates\medical\product_detail.html:161
+msgid "Qo'llash yo'riqnomasi"
+msgstr "Instructions for Use"
+
+#: .\templates\medical\product_detail.html:148
+#: .\templates\medical\product_detail.html:167
+msgid "Tarkib"
+msgstr "Composition"
+
+#: .\templates\medical\product_detail.html:149
+#: .\templates\medical\product_detail.html:173
+msgid "Sharhlar"
+msgstr "Reviews"
+
+#: .\templates\medical\product_detail.html:155
+msgid "Mahsulot haqida batafsil ma'lumot"
+msgstr "Detailed Information About the Product"
+
+#: .\templates\medical\product_detail.html:177
+msgid "Hozircha sharhlar yo‘q"
+msgstr "No reviews yet"
+
+#: .\templates\medical\product_detail.html:186
+msgid "O'xshash mahsulotlar"
+msgstr "Similar Products"
+
+#: .\templates\medical\product_detail.html:199
+msgid "Ko‘rish"
+msgstr "View"
+
+#: .\templates\medical\products.html:9
+msgid "Mahsulotlar - Vetmedikal"
+msgstr "Products - Vetmedikal"
+
+#: .\templates\medical\products.html:102
+msgid "Batafsil ma'lumot"
+msgstr "More details"
+
+#: .\templates\medical\products.html:114
+msgid "Veterinar mahsulotlarimizning afzalliklari"
+msgstr "Advantages of our veterinary products"
+
+#: .\templates\medical\products.html:115
+msgid "Nima uchun Vetmedikal mahsulotlarini tanlash kerak"
+msgstr "Why choose Vetmedikal products"

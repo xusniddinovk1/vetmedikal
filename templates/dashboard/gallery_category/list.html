@@ -1,8 +1,8 @@
 {% extends 'dashboard/base.html' %}
 {% load humanize %}
 
-{% block title %}About Us List{% endblock %}
-{% block page_header %}Lessons List{% endblock %}
+{% block title %}List{% endblock %}
+{% block page_header %}List{% endblock %}
 
 {% block content %}
 <div class="container center-content">
@@ -20,7 +20,7 @@
             <tbody>
             {% for txt in items %}
             <tr>
-                <td class="title">{{ txt.name }}</td>
+                <td class="title">{{ txt.name_uz }}</td>
 
                 <td class="actions">
                     <a href="{% url 'uz-admin:rasm_tur_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>

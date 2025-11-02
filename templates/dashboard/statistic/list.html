@@ -21,7 +21,7 @@
             <tbody>
             {% for txt in stats %}
             <tr>
-                <td class="title">{{ txt.name }}</td>
+                <td class="title">{{ txt.name_uz }}</td>
                 <td class="number">{{ txt.number }}</td>
                 <td class="actions">
                     <a href="{% url 'uz-admin:statlar_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>

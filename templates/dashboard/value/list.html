@@ -22,8 +22,8 @@
             <tbody>
             {% for txt in values %}
             <tr>
-                <td class="title">{{ txt.title }}</td>
-                <td class="description">{{ txt.context|truncatechars:60 }}</td>
+                <td class="title">{{ txt.title_uz }}</td>
+                <td class="description">{{ txt.context_uz|truncatechars:60 }}</td>
                 <td class="description">{{ txt.icon }}</td>
                 <td class="actions">
                     <a href="{% url 'uz-admin:qadriyatlar_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
 {% load humanize %}
-<html lang="uz">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vetmedikal - Uy hayvonlari uchun vaksinalar va dori-darmonlar</title>
+    <title>{% blocktrans %}Vetmedikal - Uy hayvonlari uchun vaksinalar va dori-darmonlar{% endblocktrans %}</title>
     <link rel="stylesheet" href="{% static 'medical/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,27 +21,38 @@
             <div class="nav-logo">
                 <span>Vetmedikal</span>
             </div>
+            <form action="{% url 'set_language' %}" method="post" class="lang-form">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.get_full_path }}">
+              {% get_current_language as LANGUAGE_CODE %}
+
+              <select name="language" onchange="this.form.submit()">
+                <option value="uz" {% if LANGUAGE_CODE == 'uz' %}selected{% endif %}>UZ</option>
+                <option value="ru" {% if LANGUAGE_CODE == 'ru' %}selected{% endif %}>RU</option>
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>EN</option>
+              </select>
+            </form>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'uz:home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'uz:home' %}" class="nav-link">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'uz:about' %}" class="nav-link">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'uz:products' %}" class="nav-link active">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'uz:manufacturing' %}" class="nav-link">{% blocktrans %}Fermadagi natijalar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'uz:partners' %}" class="nav-link">{% blocktrans %}Hamkorlar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'uz:news' %}" class="nav-link">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'uz:gallery' %}" class="nav-link">{% blocktrans %}Galereya{% endblocktrans %}</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -52,17 +64,14 @@
     </nav>
 </header>
 
-
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
-        <h1 class="hero-title">Parrandalar uchun sifatli premikslar va vaksinalar</h1>
-        <p class="hero-description">Vetmedikal - parrandachilik uchun eng sifatli va ishonchli chet el mahsulotlarini
-            taklif etuvchi kompaniya. Bizning premiks va vaksinalar xalqaro standartlarga javob beradi, samaradorligi
-            esa amaliyotda isbotlangan.</p>
+        <h1 class="hero-title">{% blocktrans %}Parrandalar uchun sifatli premikslar va vaksinalar{% endblocktrans %}</h1>
+        <p class="hero-description">{% blocktrans %} Vetmedikal - parrandachilik uchun eng sifatli va ishonchli chet el mahsulotlarini taklif etuvchi kompaniya.Bizning premiks va vaksinalar xalqaro standartlarga javob beradi, samaradorligi esa amaliyotda isbotlangan.{% endblocktrans %}</p>
         <div class="hero-buttons">
-            <a href="{% url 'uz:products'%}" class="btn btn-primary">Mahsulotlarimiz</a>
-            <a href="{% url 'uz:about' %}" class="btn btn-secondary">Biz haqimizda</a>
+            <a href="{% url 'uz:products'%}" class="btn btn-primary">{% blocktrans %}Mahsulotlarimiz{% endblocktrans %}</a>
+            <a href="{% url 'uz:about' %}" class="btn btn-secondary">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
         </div>
     </div>
 </section>
@@ -71,8 +80,8 @@
 <section class="services">
     <div class="container">
         <div class="section-header">
-            <h2>Xizmatlarimiz</h2>
-            <p>Uy hayvonlari uchun to'liq veterinar yechimlar</p>
+            <h2>{% blocktrans %}Xizmatlarimiz{% endblocktrans %}</h2>
+            <p>{% blocktrans %}Bizning asosiy yo'nalishimiz - chetdan olib kelingan, sifat va samaradorligi isbotlangan vaksina hamda premikslarni yetkazib berish{% endblocktrans %}</p>
         </div>
         <div class="services-grid">
             {% for service in services %}
@@ -94,7 +103,7 @@
     <div class="container">
         <div class="features-content">
             <div class="features-text">
-                <h2>Nima uchun tovuq fermalari bizni tanlaydi?</h2>
+                <h2>{% blocktrans %}Nima uchun tovuq fermalari bizni tanlaydi?{% endblocktrans %}</h2>
                 <div class="feature-list">
                     {% for feature in features %}
                     <div class="feature-item">
@@ -109,7 +118,7 @@
             </div>
             <div class="features-image">
                 <img src="{% static '/images/fon/Vetmedikal Logo1.png'%}"
-                     alt="Veterinar klinika"/>
+                     alt="{% trans 'Veterinar klinika' %}"/>
             </div>
         </div>
     </div>
@@ -120,14 +129,14 @@
 <section class="cta">
     <div class="container">
         <div class="cta-content">
-            <h2> Parrandalar salomatligi va rivojlanishi uchun ishonchli yechim bizda</h2>
-            <p>Sifatli premiks va vaksinalar uchun bizga murojaat qiling</p>
+            <h2>{% blocktrans %}Parrandalar salomatligi va rivojlanishi uchun ishonchli yechim bizda{% endblocktrans %}</h2>
+            <p>{% blocktrans %}Sifatli premiks va vaksinalar uchun bizga murojaat qiling{% endblocktrans %}</p>
             <div class="cta-buttons">
                 <a href="tel:+998988081100" class="btn btn-primary">
                     <i class="fas fa-phone"></i>
-                    Qo'ng'iroq qilish
+                    {% blocktrans %}Qo‘ng‘iroq qilish{% endblocktrans %}
                 </a>
-                <a href="{% url 'uz:products'%}" class="btn btn-outline">Mahsulotlar</a>
+                <a href="{% url 'uz:products'%}" class="btn btn-outline">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
             </div>
         </div>
     </div>
@@ -141,8 +150,7 @@
                 <div class="footer-logo">
                     <span>Vetmedikal</span>
                 </div>
-                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va
-                    vaksinalarni taqdim etadi.</p>
+                <p>{% blocktrans %}Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi{% endblocktrans %}</p>
                 <div class="social-links">
                     {% for int in internet %}
                     <a href="{{ int.link }}" target="_blank">
@@ -152,25 +160,27 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Tezkor havolalar</h3>
+                <h3>{% blocktrans %}Tezkor havolalar{% endblocktrans %}</h3>
                 <ul>
-                    <li><a href="{% url 'uz:about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'uz:products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'uz:news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'uz:gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'uz:about' %}">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:news' %}">{% blocktrans %}Yangiliklar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:gallery' %}">{% blocktrans %}Galereya{% endblocktrans %}</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Mahsulotlar</h3>
+                <h3>{% blocktrans %}Mahsulotlar{% endblocktrans %}</h3>
                 <ul>
-                    <li><a href="{% url 'uz:products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'uz:products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'uz:products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'uz:products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Vaksinalar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Premikslar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Veterinar preparatlari{% endblocktrans %}</a>
+                    </li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Veterinar uskunalari{% endblocktrans %}</a>
+                    </li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Aloqa</h3>
+                <h3>{% blocktrans %}Aloqa{% endblocktrans %}</h3>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -188,10 +198,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vetmedikal. Barcha huquqlar himoyalangan.</p>
+            <p>&copy; 2024 {% blocktrans %}Vetmedikal. Barcha huquqlar himoyalangan{% endblocktrans %}.</p>
         </div>
     </div>
 </footer>
+
 
 <script src="{% static 'medical/js/script.js'%}"></script>
 </body>

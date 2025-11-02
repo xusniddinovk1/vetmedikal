@@ -24,9 +24,9 @@
             <tbody>
             {% for txt in items %}
             <tr>
-                <td class="title">{{ txt.title }}</td>
+                <td class="title">{{ txt.title_uz }}</td>
                 <td class="category">{{ txt.category }}</td>
-                <td class="description">{{ txt.description|truncatechars:60 }}</td>
+                <td class="description">{{ txt.description_uz|truncatechars:60 }}</td>
                 <td class="image">
                     {% if txt.image %}
                     <img src="{{ txt.image.url }}" alt="Rasm"/>

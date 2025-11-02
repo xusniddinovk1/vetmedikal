@@ -2,21 +2,21 @@ from django.db import models
 
 
 class Service(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True)
     icon = models.CharField(max_length=50)
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
 
 
 class Feature(models.Model):
-    title = models.CharField(max_length=255)
-    context = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    context = models.TextField(blank=True)
     icon = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.sarlavha
+        return self.title
 
 
 class Contact(models.Model):
@@ -39,8 +39,8 @@ class Internet(models.Model):
 
 # Missiya (biz haqimizda)
 class Mission(models.Model):
-    title = models.CharField(max_length=255)
-    context = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    context = models.TextField(blank=True)
     image = models.ImageField(upload_to="missions/", blank=True, null=True)
 
 
@@ -51,8 +51,8 @@ class Mission(models.Model):
 # Missiya punktlari (ikonka bilan)
 class MissionPoint(models.Model):
     icon = models.CharField(max_length=50, default="fas fa-check-circle")
-    title = models.CharField(max_length=255)
-    context = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    context = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
@@ -61,7 +61,7 @@ class MissionPoint(models.Model):
 # Statistikalar
 class Statistic(models.Model):
     number = models.CharField(max_length=20)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return f"{self.number} {self.name}"
@@ -70,8 +70,8 @@ class Statistic(models.Model):
 # Qadriyatlar
 class Value(models.Model):
     icon = models.CharField(max_length=50)
-    title = models.CharField(max_length=100)
-    context = models.TextField()
+    title = models.CharField(max_length=100, blank=True)
+    context = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
@@ -80,8 +80,8 @@ class Value(models.Model):
 # Yutuqlar
 class Achievement(models.Model):
     icon = models.CharField(max_length=50)
-    title = models.CharField(max_length=100)
-    context = models.TextField()
+    title = models.CharField(max_length=100, blank=True)
+    context = models.TextField(blank=True)
     year = models.CharField(max_length=10)
 
     def __str__(self):
@@ -90,9 +90,9 @@ class Achievement(models.Model):
 
 # Jamoa
 class Member(models.Model):
-    name = models.CharField(max_length=100)
-    position = models.CharField(max_length=100)
-    bio = models.TextField()
+    name = models.CharField(max_length=100, blank=True)
+    position = models.CharField(max_length=100, blank=True)
+    bio = models.TextField(blank=True)
     image = models.ImageField(upload_to="team/")
 
     def __str__(self):
@@ -102,8 +102,8 @@ class Member(models.Model):
 # Tarix (timeline)
 class History(models.Model):
     year = models.CharField(max_length=10)
-    title = models.CharField(max_length=255)
-    context = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    context = models.TextField(blank=True)
 
     def __str__(self):
         return f"{self.year} - {self.context}"

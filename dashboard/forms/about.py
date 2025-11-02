@@ -33,7 +33,8 @@ class InternetForm(forms.ModelForm):
 class MissionForm(forms.ModelForm):
     class Meta:
         model = Mission
-        fields = "__all__"
+        fields = ['title_uz', 'title_ru', 'title_en', 'context_uz', 'context_ru', 'context_en',
+                  'image']
 
 
 class MissionPointForm(forms.ModelForm):

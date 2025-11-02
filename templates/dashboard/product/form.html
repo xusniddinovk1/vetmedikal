@@ -11,25 +11,68 @@
         {{ form.non_field_errors }}
 
         <div class="form-group">
-            <label for="{{ form.title.id_for_label }}">Sarlavha</label>
-            {{ form.title }}
+            <label for="{{ form.title.id_for_label }}">Sarlavha(uz)</label>
+            {{ form.title_uz }}
         </div>
         <div class="form-group">
-            <label for="{{ form.subtitle.id_for_label }}">Subtitr</label>
-            {{ form.subtitle }}
+            <label for="{{ form.title.id_for_label }}">Sarlavha(ru)</label>
+            {{ form.title_ru }}
         </div>
         <div class="form-group">
-            <label for="{{ form.usage.id_for_label }}">Qo'llanishi</label>
-            {{ form.usage }}
+            <label for="{{ form.title.id_for_label }}">Sarlavha(en)</label>
+            {{ form.title_en }}
         </div>
         <div class="form-group">
-            <label for="{{ form.composition.id_for_label }}">Tarkibi</label>
-            {{ form.composition }}
+            <label for="{{ form.subtitle.id_for_label }}">Subtitr(uz)</label>
+            {{ form.subtitle_uz }}
         </div>
         <div class="form-group">
-            <label for="{{ form.description.id_for_label }}">Tavsif</label>
-            {{ form.description }}
+            <label for="{{ form.subtitle.id_for_label }}">Subtitr(ru)</label>
+            {{ form.subtitle_ru }}
         </div>
+        <div class="form-group">
+            <label for="{{ form.subtitle.id_for_label }}">Subtitr(en)</label>
+            {{ form.subtitle_en }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.usage.id_for_label }}">Qo'llanishi(uz)</label>
+            {{ form.usage_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.usage.id_for_label }}">Qo'llanishi(ru)</label>
+            {{ form.usage_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.usage.id_for_label }}">Qo'llanishi(en)</label>
+            {{ form.usage_en }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.composition.id_for_label }}">Tarkibi(uz)</label>
+            {{ form.composition_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.composition.id_for_label }}">Tarkibi(ru)</label>
+            {{ form.composition_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.composition.id_for_label }}">Tarkibi(en)</label>
+            {{ form.composition_en }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Tavsif(uz)</label>
+            {{ form.description_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Tavsif(ru)</label>
+            {{ form.description_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Tavsif(en)</label>
+            {{ form.description_en }}
+        </div>
+
         <div class="form-group">
             <label for="{{ form.image.id_for_label }}">Rasm</label>
             {{ form.image }}
@@ -39,13 +82,29 @@
             {{ form.category }}
         </div>
         <div class="form-group">
-            <label for="{{ form.badge.id_for_label }}">Badge</label>
-            {{ form.badge }}
+            <label for="{{ form.badge.id_for_label }}">Badge(uz)</label>
+            {{ form.badge_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.badge.id_for_label }}">Badge(ru)</label>
+            {{ form.badge_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.badge.id_for_label }}">Badge(en)</label>
+            {{ form.badge_en }}
         </div>
 
         <div class="form-group">
-            <label for="{{ form.specs.id_for_label }}">Specs</label>
-            {{ form.specs }}
+            <label for="{{ form.specs.id_for_label }}">Specs(uz)</label>
+            {{ form.specs_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.specs.id_for_label }}">Specs(ru)</label>
+            {{ form.specs_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.specs.id_for_label }}">Specs(en)</label>
+            {{ form.specs_en }}
         </div>
 
         <div class="form-group">
@@ -53,12 +112,28 @@
             {{ form.price }}
         </div>
         <div class="form-group">
-            <label for="{{ form.country.id_for_label }}">Ishlab chiqarilgan mamlakat</label>
-            {{ form.country }}
+            <label for="{{ form.country.id_for_label }}">Ishlab chiqarilgan mamlakat(uz)</label>
+            {{ form.country_uz }}
         </div>
         <div class="form-group">
-            <label for="{{ form.certificates.id_for_label }}">Sertifikati</label>
-            {{ form.certificates }}
+            <label for="{{ form.country.id_for_label }}">Ishlab chiqarilgan mamlakat(ru)</label>
+            {{ form.country_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.country.id_for_label }}">Ishlab chiqarilgan mamlakat(en)</label>
+            {{ form.country_en }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.certificates.id_for_label }}">Sertifikati(uz)</label>
+            {{ form.certificates_uz }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.certificates.id_for_label }}">Sertifikati(ru)</label>
+            {{ form.certificates_ru }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.certificates.id_for_label }}">Sertifikati(en)</label>
+            {{ form.certificates_en }}
         </div>
         <div class="form-buttons">
             <button type="submit" class="submit-btn">💾 Saqlash</button>

@@ -267,10 +267,17 @@ def mission_list(request):
 
 
 def mission_create(request):
-    form = MissionForm(request.POST or None, request.FILES or None)
-    if request.method == "POST" and form.is_valid():
-        form.save()
-        return redirect("uz-admin:missiya_list")
+    if request.method == 'POST':
+        print(request.POST)  # <-- bu joyda terminalda natijani ko‘ring
+        form = MissionForm(request.POST, request.FILES)
+        if form.is_valid():
+            obj = form.save()
+            print(obj.title_uz, obj.title_ru, obj.title_en)  # <-- shuni ham ko‘ring
+            return redirect('uz-admin:missiya_list')
+        else:
+            print(form.errors)
+    else:
+        form = MissionForm()
     return render(request, "dashboard/mission/form.html", {"form": form})
 
 

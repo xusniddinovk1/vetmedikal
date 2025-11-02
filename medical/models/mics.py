@@ -2,8 +2,8 @@ from django.db import models
 
 
 class ManufacturingOverview(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
     image = models.ImageField(upload_to="manufacturing/")
 
     def __str__(self):
@@ -12,7 +12,7 @@ class ManufacturingOverview(models.Model):
 
 class ManufacturingStat(models.Model):
     number = models.CharField(max_length=50)
-    label = models.CharField(max_length=255)
+    label = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return f"{self.number} {self.label}"
@@ -20,8 +20,8 @@ class ManufacturingStat(models.Model):
 
 class ProductionLine(models.Model):
     icon = models.CharField(max_length=50, default="fas fa-industry")  # FontAwesome icon
-    title = models.CharField(max_length=255)
-    description = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
@@ -29,8 +29,8 @@ class ProductionLine(models.Model):
 
 # Hamkorlar modeli
 class Partner(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField()
+    name = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
     logo = models.ImageField(upload_to="partners/")
     website = models.URLField(blank=True, null=True)
 
@@ -41,15 +41,15 @@ class Partner(models.Model):
 # Hamkorlik afzalliklari modeli
 class PartnershipBenefit(models.Model):
     icon = models.CharField(max_length=50, default="fas fa-check-circle")
-    title = models.CharField(max_length=255)
-    description = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
 
 
 class GalleryCategory(models.Model):
-    name = models.CharField(max_length=100, unique=True)  # Masalan: "Binolar", "Mahsulotlar"
+    name = models.CharField(max_length=100, unique=True, blank=True)  # Masalan: "Binolar", "Mahsulotlar"
 
     class Meta:
         verbose_name = "Galereya Kategoriya"
@@ -61,7 +61,7 @@ class GalleryCategory(models.Model):
 
 class Gallery(models.Model):
     category = models.ForeignKey(GalleryCategory, on_delete=models.CASCADE, related_name="images")
-    title = models.CharField(max_length=200)  # Masalan: "Asosiy bino"
+    title = models.CharField(max_length=200, blank=True)  # Masalan: "Asosiy bino"
     description = models.TextField(blank=True, null=True)  # Qo‘shimcha izoh
     image = models.ImageField(upload_to="gallery/")  # Rasm joylash
     created_at = models.DateTimeField(auto_now_add=True)
@@ -75,15 +75,15 @@ class Gallery(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.name
 
 
 class News(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
+    title = models.CharField(max_length=255, blank=True)
+    content = models.TextField(blank=True)
     image = models.ImageField(upload_to="news/")
     date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="news")

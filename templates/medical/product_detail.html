@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% load static %}
 {% load humanize %}
+{% load i18n %}
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahsulot tafsilotlari - Vetmedikal</title>
+    <title>{% blocktrans %}Mahsulot tafsilotlari - Vetmedikal{% endblocktrans %}</title>
     <link rel="stylesheet" href="{% static 'medical/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,27 +21,38 @@
             <div class="nav-logo">
                 <span>Vetmedikal</span>
             </div>
+            <form action="{% url 'set_language' %}" method="post" class="lang-form">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.get_full_path }}">
+              {% get_current_language as LANGUAGE_CODE %}
+
+              <select name="language" onchange="this.form.submit()">
+                <option value="uz" {% if LANGUAGE_CODE == 'uz' %}selected{% endif %}>UZ</option>
+                <option value="ru" {% if LANGUAGE_CODE == 'ru' %}selected{% endif %}>RU</option>
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>EN</option>
+              </select>
+            </form>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="{% url 'uz:home' %}" class="nav-link">Bosh sahifa</a>
+                    <a href="{% url 'uz:home' %}" class="nav-link">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:about' %}" class="nav-link">Biz haqimizda</a>
+                    <a href="{% url 'uz:about' %}" class="nav-link">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:products' %}" class="nav-link active">Mahsulotlar</a>
+                    <a href="{% url 'uz:products' %}" class="nav-link active">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:manufacturing' %}" class="nav-link">Fermadagi natijalar</a>
+                    <a href="{% url 'uz:manufacturing' %}" class="nav-link">{% blocktrans %}Fermadagi natijalar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:partners' %}" class="nav-link">Hamkorlar</a>
+                    <a href="{% url 'uz:partners' %}" class="nav-link">{% blocktrans %}Hamkorlar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:news' %}" class="nav-link">Yangiliklar</a>
+                    <a href="{% url 'uz:news' %}" class="nav-link">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'uz:gallery' %}" class="nav-link">Galereya</a>
+                    <a href="{% url 'uz:gallery' %}" class="nav-link">{% blocktrans %}Galereya{% endblocktrans %}</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -56,9 +68,9 @@
 <section class="breadcrumb">
     <div class="container">
         <nav class="breadcrumb-nav">
-            <a href="{% url 'uz:home' %}">Bosh sahifa</a>
+            <a href="{% url 'uz:home' %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="{% url 'uz:products' %}">Mahsulotlar</a>
+            <a href="{% url 'uz:products' %}">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a>
             <i class="fas fa-chevron-right"></i>
             <span>{{ product.title }}</span>
         </nav>
@@ -98,7 +110,7 @@
                 {% if product.country %}
                 <div class="product-country">
                     <i class="fas fa-globe"></i>
-                    <span><strong>Ishlab chiqaruvchi davlat:</strong> {{ product.country }}</span>
+                    <span><strong>{% blocktrans %}Ishlab chiqaruvchi davlat{% endblocktrans %}:</strong> {{ product.country }}</span>
                 </div>
                 {% endif %}
 
@@ -122,44 +134,44 @@
                 <!-- Pricing -->
                 <div class="product-pricing">
                     <div class="price-section">
-                        <div class="current-price">{{ product.price}} so'm</div>
+                        <div class="current-price">{{ product.price}} {% blocktrans %}so'm{% endblocktrans %}</div>
                     </div>
                 </div>
             </div>
             <div class="product-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="openTab(event, 'description')">Ta'rif</button>
-                    <button class="tab-btn" onclick="openTab(event, 'usage')">Qo'llash yo'riqnomasi</button>
-                    <button class="tab-btn" onclick="openTab(event, 'composition')">Tarkib</button>
-                    <button class="tab-btn" onclick="openTab(event, 'reviews')">Sharhlar</button>
+                    <button class="tab-btn active" onclick="openTab(event, 'description')">{% blocktrans %}Ta'rif{% endblocktrans %}</button>
+                    <button class="tab-btn" onclick="openTab(event, 'usage')">{% blocktrans %}Qo'llash yo'riqnomasi{% endblocktrans %}</button>
+                    <button class="tab-btn" onclick="openTab(event, 'composition')">{% blocktrans %}Tarkib{% endblocktrans %}</button>
+                    <button class="tab-btn" onclick="openTab(event, 'reviews')">{% blocktrans %}Sharhlar{% endblocktrans %}</button>
                 </div>
 
                 <div class="tab-content">
                     <!-- Description -->
                     <div id="description" class="tab-panel active">
-                        <h3>Mahsulot haqida batafsil ma'lumot</h3>
+                        <h3>{% blocktrans %}Mahsulot haqida batafsil ma'lumot{% endblocktrans %}</h3>
                         <p>{{ product.description|linebreaks }}</p>
                     </div>
 
                     <!-- Usage -->
                     <div id="usage" class="tab-panel">
-                        <h3>Qo'llash yo'riqnomasi</h3>
+                        <h3>{% blocktrans %}Qo'llash yo'riqnomasi{% endblocktrans %}</h3>
                         <p>{{ product.usage|linebreaks }}</p>
                     </div>
 
                     <!-- Composition -->
                     <div id="composition" class="tab-panel">
-                        <h3>Tarkib va formulation</h3>
+                        <h3>{% blocktrans %}Tarkib{% endblocktrans %}</h3>
                         <p>{{ product.composition|linebreaks }}</p>
                     </div>
 
                     <!-- Reviews -->
                     <div id="reviews" class="tab-panel">
-                        <h3>Sharhlar</h3>
+                        <h3>{% blocktrans %}Sharhlar{% endblocktrans %}</h3>
                         {% if product.reviews %}
                         <p>{{ product.reviews|linebreaks }}</p>
                         {% else %}
-                        <p>Hozircha sharhlar yo‘q.</p>
+                        <p>{% blocktrans %}Hozircha sharhlar yo‘q{% endblocktrans %}.</p>
                         {% endif %}
                     </div>
                 </div>
@@ -168,7 +180,7 @@
         </div>
         <!-- Related Products -->
         <section class="related-products">
-            <h2>O'xshash mahsulotlar</h2>
+            <h2>{% blocktrans %}O'xshash mahsulotlar{% endblocktrans %}</h2>
             <div class="products-grid">
                 {% for p in related_products %}
                 <div class="product-card">
@@ -181,7 +193,7 @@
                         <div class="product-price">
                             <span class="current-price">{{ p.price }} so'm</span>
                         </div>
-                        <a href="{% url 'uz:product_detail' p.id %}" class="btn btn-primary">Ko‘rish</a>
+                        <a href="{% url 'uz:product_detail' p.id %}" class="btn btn-primary">{% blocktrans %}Ko‘rish{% endblocktrans %}</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -197,7 +209,7 @@
                 <div class="footer-logo">
                     <span>Vetmedikal</span>
                 </div>
-                <p>Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi.</p>
+                <p>{% blocktrans %}Parrandalar salomatligi uchun sinovdan o‘tgan, eng sifatli va ishonchli xorijiy premiks va vaksinalarni taqdim etadi{% endblocktrans %}</p>
                 <div class="social-links">
                     {% for int in internet %}
                     <a href="{{ int.link }}" target="_blank">
@@ -207,25 +219,27 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Tezkor havolalar</h3>
+                <h3>{% blocktrans %}Tezkor havolalar{% endblocktrans %}</h3>
                 <ul>
-                    <li><a href="{% url 'uz:about' %}">Biz haqimizda</a></li>
-                    <li><a href="{% url 'uz:products' %}">Mahsulotlar</a></li>
-                    <li><a href="{% url 'uz:news' %}">Yangiliklar</a></li>
-                    <li><a href="{% url 'uz:gallery' %}">Galereya</a></li>
+                    <li><a href="{% url 'uz:about' %}">{% blocktrans %}Biz haqimizda{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Mahsulotlar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:news' %}">{% blocktrans %}Yangiliklar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:gallery' %}">{% blocktrans %}Galereya{% endblocktrans %}</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Mahsulotlar</h3>
+                <h3>{% blocktrans %}Mahsulotlar{% endblocktrans %}</h3>
                 <ul>
-                    <li><a href="{% url 'uz:products' %}">Tovuq vaksinasi</a></li>
-                    <li><a href="{% url 'uz:products' %}">Mushuk vaksinasi</a></li>
-                    <li><a href="{% url 'uz:products' %}">Antiparazitar dorilar</a></li>
-                    <li><a href="{% url 'uz:products' %}">Vitaminlar</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Vaksinalar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Premikslar{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Veterinar preparatlari{% endblocktrans %}</a>
+                    </li>
+                    <li><a href="{% url 'uz:products' %}">{% blocktrans %}Veterinar uskunalari{% endblocktrans %}</a>
+                    </li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Aloqa</h3>
+                <h3>{% blocktrans %}Aloqa{% endblocktrans %}</h3>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -243,7 +257,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vetmedikal. Barcha huquqlar himoyalangan.</p>
+            <p>&copy; 2024 {% blocktrans %}Vetmedikal. Barcha huquqlar himoyalangan{% endblocktrans %}.</p>
         </div>
     </div>
 </footer>

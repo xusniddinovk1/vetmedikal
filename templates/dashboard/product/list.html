@@ -31,11 +31,11 @@
             <tbody>
             {% for txt in products %}
             <tr>
-                <td class="title">{{ txt.title }}</td>
-                <td class="title">{{ txt.subtitle |truncatechars:30}}</td>
-                <td class="title">{{ txt.description |truncatechars:30}}</td>
-                <td class="title">{{ txt.usage |truncatechars:30}}</td>
-                <td class="title">{{ txt.composition |truncatechars:30}}</td>
+                <td class="title">{{ txt.title_uz }}</td>
+                <td class="title">{{ txt.subtitle_uz |truncatechars:30}}</td>
+                <td class="title">{{ txt.description_uz |truncatechars:30}}</td>
+                <td class="title">{{ txt.usage_uz |truncatechars:30}}</td>
+                <td class="title">{{ txt.composition_uz |truncatechars:30}}</td>
                 <td class="image">
                     {% if txt.image %}
                     <img src="{{ txt.image.url }}" alt="Rasm"/>
@@ -44,11 +44,11 @@
                     {% endif %}
                 </td>
                 <td class="title">{{ txt.category }}</td>
-                <td class="title">{{ txt.badge }}</td>
-                <td class="title">{{ txt.specs |truncatechars:60}}</td>
+                <td class="title">{{ txt.badge_uz }}</td>
+                <td class="title">{{ txt.specs_uz |truncatechars:60}}</td>
                 <td class="slug">{{ txt.price }}</td>
-                <td class="description">{{ txt.country }}</td>
-                <td class="description">{{ txt.certificates }}</td>
+                <td class="description">{{ txt.country_uz }}</td>
+                <td class="description">{{ txt.certificates_uz }}</td>
                 <td class="actions">
                     <a href="{% url 'uz-admin:mahsulot_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
                     <a href="{% url 'uz-admin:mahsulot_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>

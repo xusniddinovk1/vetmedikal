@@ -1,8 +1,8 @@
 {% extends 'dashboard/base.html' %}
 {% load humanize %}
 
-{% block title %}Qadriyatlar List{% endblock %}
-{% block page_header %}Qadriyatlar List{% endblock %}
+{% block title %}Qadriyatlar{% endblock %}
+{% block page_header %}Qadriyatlar{% endblock %}
 
 {% block content %}
 <div class="container center-content">
@@ -22,8 +22,8 @@
             <tbody>
             {% for txt in items %}
             <tr>
-                <td class="title">{{ txt.title }}</td>
-                <td class="description">{{ txt.description|truncatechars:60 }}</td>
+                <td class="title">{{ txt.title_uz }}</td>
+                <td class="description">{{ txt.description_en|truncatechars:60 }}</td>
                 <td class="description">{{ txt.icon }}</td>
                 <td class="actions">
                     <a href="{% url 'uz-admin:qator_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>

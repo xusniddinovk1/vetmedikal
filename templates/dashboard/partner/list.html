@@ -23,8 +23,8 @@
             <tbody>
             {% for txt in items %}
             <tr>
-                <td class="title">{{ txt.name }}</td>
-                <td class="description">{{ txt.description|truncatechars:60 }}</td>
+                <td class="title">{{ txt.name_uz}}</td>
+                <td class="description">{{ txt.description_uz|truncatechars:60 }}</td>
                 <td class="image">
                     {% if txt.logo %}
                     <img src="{{ txt.logo.url }}" alt="Rasm"/>

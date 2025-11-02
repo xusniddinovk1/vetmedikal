@@ -11,7 +11,66 @@ body {
   color: #333;
   overflow-x: hidden;
 }
+.lang-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
 
+.lang-form select {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  padding: 0.6rem 2.4rem 0.6rem 1.2rem; /* biroz kattaroq joy */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  outline: none;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23333' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M6 9l6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* Hover effekti */
+.lang-form select:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+/* Focus holati */
+.lang-form select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Optionlar */
+.lang-form option {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+}
+
+/* 📱 Mobil ekranlar uchun optimizatsiya */
+@media (max-width: 600px) {
+  .lang-form {
+    justify-content: center;
+  }
+
+  .lang-form select {
+    width: 60%;
+    min-width: 100px; /* matn sig‘ishi uchun */
+    font-size: 1.1rem; /* biroz kattaroq matn */
+    padding: 0.7rem 2.6rem 0.7rem 1.4rem; /* ichki joy ko‘paytirildi */
+  }
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -134,10 +193,7 @@ body {
 }
 
 .hero-title {
- /* border-radius: 15px;
-  background: rgba(255, 255, 255, 0.3); /* shaffof fon */
-  /*backdrop-filter: blur(10px); /* orqa fonni blur qiladi */
-  -webkit-backdrop-filter: blur(10px); /* Safari uchun */
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
   font-size: 4rem;
   font-weight: 700;

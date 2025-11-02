@@ -23,8 +23,8 @@
             <tbody>
             {% for txt in members %}
             <tr>
-                <td class="title">{{ txt.name }}</td>
-                <td class="slug">{{ txt.position }}</td>
+                <td class="title">{{ txt.name_uz }}</td>
+                <td class="slug">{{ txt.position_uz }}</td>
                 <td class="image">
                     {% if txt.image %}
                     <img src="{{ txt.image.url }}" alt="Rasm"/>
@@ -32,7 +32,7 @@
                     Yo‘q
                     {% endif %}
                 </td>
-                <td class="description">{{ txt.bio|truncatechars:60 }}</td>
+                <td class="description">{{ txt.bio_uz|truncatechars:60 }}</td>
                 <td class="actions">
                     <a href="{% url 'uz-admin:azolar_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
                     <a href="{% url 'uz-admin:azolar_delete' txt.id %}" class="btn btn-danger btn-sm">🗑️</a>

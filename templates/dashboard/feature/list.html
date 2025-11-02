@@ -1,8 +1,8 @@
 {% extends 'dashboard/base.html' %}
 {% load humanize %}
 
-{% block title %}Feature List{% endblock %}
-{% block page_header %}Feature List{% endblock %}
+{% block title %}Xususiyatlar List{% endblock %}
+{% block page_header %}Xususiyatlar List{% endblock %}
 
 {% block content %}
 <div class="container center-content">
@@ -22,9 +22,9 @@
             <tbody>
             {% for txt in features %}
             <tr>
-                <td class="title">{{ txt.title }}</td>
-                <td class="description">{{ txt.context|truncatechars:60 }}</td>
-                <td class="title">{{ txt.title }}</td>
+                <td class="title">{{ txt.title_uz }}</td>
+                <td class="description">{{ txt.context_uz|truncatechars:60 }}</td>
+                <td class="title">{{ txt.icon }}</td>
 
                 <td class="actions">
                     <a href="{% url 'uz-admin:xusus_edit' txt.id %}" class="btn btn-warning btn-sm">✏️</a>
