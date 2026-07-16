@@ -1,6 +1,6 @@
-# Vedmedical - Farmatsevtika Kompaniyasi Veb-sayti
+# Vetmedikal - Farmatsevtika Kompaniyasi Veb-sayti
 
-Bu vedmedical kompaniyasi uchun yaratilgan veb-sayt bo'lib, vaksinalar va tibbiy preparatlar sotadigan korxona uchun mo'ljallangan.
+Bu vetmedikal kompaniyasi uchun yaratilgan veb-sayt bo'lib, vaksinalar va tibbiy preparatlar sotadigan korxona uchun mo'ljallangan.
 
 ### Asosiy sahifalar:
 - **Asosiy sahifa** - Bosh sahifa (Hero section, xizmatlar, afzalliklar)
